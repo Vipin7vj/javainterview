@@ -1,0 +1,741 @@
+[{
+		"question": "What is difference between JDK,JRE and JVM?",
+		"answer": "JVM:JVM is an acronym for Java Virtual Machine, it is an abstract machine which provides the runtime environment in which java bytecode can be executed. It is a specification.JVMs are available for many hardware and software platforms (so JVM is platform dependent).\nJRE:JRE stands for Java Runtime Environment. It is the implementation of JVM.\nJDK:JDK is an acronym for Java Development Kit. It physically exists. It contains JRE + development tools."
+	},
+	{
+		"question": "How many types of memory areas are allocated by JVM?",
+		"answer": "Many types:Class(Method) Area\nHeap\nStack\nProgram Counter Register\nNative Method Stack"
+	},
+	{
+		"question": "What is JIT compiler?",
+		"answer": "Just-In-Time(JIT) compiler:It is used to improve the performance. JIT compiles parts of the byte code that have similar functionality at the same time, and hence reduces the amount of time needed for compilation.Here the term “compiler” refers to a translator from the instruction set of a Java virtual machine (JVM) to the instruction set of a specific CPU."
+	},
+	{
+		"question": "What is platform?",
+		"answer": "A platform is basically the hardware or software environment in which a program runs. There are two types of platforms software-based and hardware-based. Java provides software-based platform."
+	},
+	{
+		"question": "What is the main difference between Java platform and other platforms?",
+		"answer": "The Java platform differs from most other platforms in the sense that it's a software-based platform that runs on top of other hardware-based platforms.It has two components:Runtime EnvironmentAPI-Application Programming Interface"
+	},
+	{
+		"question": "What gives Java its write once and run anywhere nature?",
+		"answer": "The bytecode. Java is compiled to be a byte code which is the intermediate language between source code and machine code. This byte code is not platform specific and hence can be fed to any platform."
+	},
+	{
+		"question": "What is classloader?",
+		"answer": "The classloader is a subsystem of JVM that is used to load classes and interfaces.There are many types of classloaders e.g. Bootstrap classloader, Extension classloader, System classloader, Plugin classloader etc."
+	},
+	{
+		"question": "Is Empty .java file name a valid source file name?",
+		"answer": "Yes"
+	},
+	{
+		"question": "Is delete,next,main,exit or null keyword in java?",
+		"answer": "No."
+	},
+	{
+		"question": "If I don't provide any arguments on the command line, then the String array of Main method will be empty or null?",
+		"answer": "It is empty. But not null."
+	},
+	{
+		"question": "What if I write static public void instead of public static void?",
+		"answer": "Program compiles and runs properly."
+	},
+	{
+		"question": "Program compiles and runs properly.",
+		"answer": "The local variables are not initialized to any default value, neither primitives nor object references."
+	},
+	{
+		"question": "What is difference between object oriented programming language and object based programming language?",
+		"answer": "Object based programming languages follow all the features of OOPs except Inheritance. Examples of object based programming languages are JavaScript, VBScript etc."
+	},
+	{
+		"question": "What will be the initial value of an object reference which is defined as an instance variable?",
+		"answer": "The object references are all initialized to null in Java."
+	},
+	{
+		"question": "What is constructor?",
+		"answer": "Constructor is just like a method that is used to initialize the state of an object. It is invoked at the time of object creation."
+	},
+	{
+		"question": "What is the purpose of default constructor?",
+		"answer": "The default constructor provides the default values to the objects. The java compiler creates a default constructor only if there is no constructor in the class"
+	},
+	{
+		"question": "Does constructor return any value?",
+		"answer": "yes, that is current instance (You cannot use return type yet it returns a value)"
+	},
+	{
+		"question": "Is constructor inherited?",
+		"answer": "No, constructor is not inherited."
+	},
+	{
+		"question": "Can you make a constructor final?",
+		"answer": "No, constructor can't be final."
+	},
+	{
+		"question": "What is static variable?",
+		"answer": "static variable is used to refer the common property of all objects (that is not unique for each object) e.g. company name of employees,college name of students etc.Static variable gets memory only once in class area at the time of class loading."
+	},
+	{
+		"question": "What is static method?",
+		"answer": "A static method belongs to the class rather than object of a class.A static method can be invoked without the need for creating an instance of a class.Static method can access static data member and can change the value of it."
+	},
+	{
+		"question": "Why main method is static?",
+		"answer": "because object is not required to call static method if It were non-static method,jvm creats object first then call main() method that will lead to the problem of extra memory allocation"
+	},
+	{
+		"question": "What is static block?",
+		"answer": "Is used to initialize the static data member.It is excuted before main method at the time of classloading."
+	},
+	{
+		"question": "Can we execute a program without main() method?",
+		"answer": "Yes, one of the way is static block"
+	},
+	{
+		"question": "What if the static modifier is removed from the signature of the main method?",
+		"answer": "Program compiles. But at runtime throws an error 'NoSuchMethodError'."
+	},
+	{
+		"question": "What is difference between static (class) method and instance method?",
+		"answer": "static or class method: Object is not required to call static method.Instance method:Object is required to call instance methods."
+	},
+	{
+		"question": "What is this in java?",
+		"answer": "It is a keyword that that refers to the current object."
+	},
+	{
+		"question": "What is Inheritance?",
+		"answer": "Inheritance is a mechanism in which one object acquires all the properties and behaviour of another object of another class. It represents IS-A relationship. It is used for Code Resusability and Method Overriding."
+	},
+	{
+		"question": "Which class is the superclass for every class.",
+		"answer": "Object class."
+	},
+	{
+		"question": "Why multiple inheritance is not supported in java?",
+		"answer": "To reduce the complexity and simplify the language, multiple inheritance is not supported in java in case of class"
+	},
+	{
+		"question": "What is composition?",
+		"answer": "Holding the reference of the other class within some other class is known as composition."
+	},
+	{
+		"question": "What is difference between aggregation and composition?",
+		"answer": "Aggregation represents weak relationship whereas composition represents strong relationship. For example: bike has an indicator (aggregation) but bike has an engine (compostion)."
+	},
+	{
+		"question": "Why Java does not support pointers?",
+		"answer": "Pointer is a variable that refers to the memory address. They are not used in java because they are unsafe(unsecured) and complex to understand"
+	},
+	{
+		"question": "What is super in java?",
+		"answer": "It is a keyword that refers to the immediate parent class object"
+	},
+	{
+		"question": "Can you use this() and super() both in a constructor?",
+		"answer": "No. Because super() or this() must be the first statement."
+	},
+	{
+		"question": "What is object cloning?",
+		"answer": "The object cloning is used to create the exact copy of an object."
+	},
+	{
+		"question": "What is method overloading?",
+		"answer": "If a class have multiple methods by same name but different parameters, it is known as Method Overloading. It increases the readability of the program"
+	},
+	{
+		"question": "Why method overloading is not possible by changing the return type in java?",
+		"answer": "Because of ambiguity"
+	},
+	{
+		"question": "Can we overload main() method?",
+		"answer": "Yes, You can have many main() methods in a class by overloading the main method."
+	},
+	{
+		"question": "What is method overriding",
+		"answer": "If a subclass provides a specific implementation of a method that is already provided by its parent class, it is known as Method Overriding. It is used for runtime polymorphism and to provide the specific implementation of the method"
+	},
+	{
+		"question": "Can we override static method?",
+		"answer": "No, you can't override the static method because they are the part of class not object."
+	},
+	{
+		"question": "Why we cannot override static method?",
+		"answer": "It is because the static method is the part of class and it is bound with class whereas instance method is bound with object and static gets memory in class area and instance gets memory in heap."
+	},
+	{
+		"question": "Can we override the overloaded method?",
+		"answer": "Yes"
+	},
+	{
+		"question": "Difference between method Overloading and Overriding",
+		"answer": "Method overloading increases the readability of the program.In this case, parameter must be different.Method overriding provides the specific implementation of the method that is already provided by its super class.In this case, parameter must be same."
+	},
+	{
+		"question": "Can you have virtual functions in Java?",
+		"answer": "Yes, all functions in Java are virtual by default."
+	},
+	{
+		"question": "What is covariant return type?",
+		"answer": "Now, since java5, it is possible to override any method by changing the return type if the return type of the subclass overriding method is subclass type. It is known as covariant return type."
+	},
+	{
+		"question": "What is final variable?",
+		"answer": "If you make any variable as final, you cannot change the value of final variable(It will be constant)"
+	},
+	{
+		"question": "What is final method?",
+		"answer": "Final methods can't be overriden"
+	},
+	{
+		"question": "What is final class?",
+		"answer": "Final class can't be inherited."
+	},
+	{
+		"question": "What is blank final variable?",
+		"answer": "A final variable, not initalized at the time of declaration, is known as blank final variable"
+	},
+	{
+		"question": "Can we intialize blank final variable?",
+		"answer": "Yes, only in constructor if it is non-static. If it is static blank final variable, it can be initialized only in the static block"
+	},
+	{
+		"question": "Can you declare the main method as final?",
+		"answer": "Yes, such as, public static final void main(String[] args){}."
+	},
+	{
+		"question": "What is Runtime Polymorphism?",
+		"answer": "Runtime polymorphism or dynamic method dispatch is a process in which a call to an overridden method is resolved at runtime rather than at compile-time.In this process, an overridden method is called through the reference variable of a super class. The determination of the method to be called is based on the object being referred to by the reference variable. "
+	},
+	{
+		"question": "Can you achieve Runtime Polymorphism by data members?",
+		"answer": "No."
+	},
+	{
+		"question": "What is the difference between static binding and dynamic binding?",
+		"answer": "In case of static binding type of object is determined at compile time whereas in dynamic binding type of object is determined at runtime"
+	},
+	{
+		"question": "What is abstraction?",
+		"answer": "Abstraction is a process of hiding the implementation details and showing only functionality to the user."
+	},
+	{
+		"question": "What is the difference between abstraction and encapsulation?",
+		"answer": "Abstraction hides the implementation details whereas encapsulation wraps code and data into a single unit."
+	},
+	{
+		"question": "What is abstract class?",
+		"answer": "A class that is declared as abstract is known as abstract class. It needs to be extended and its method implemented. It cannot be instantiated."
+	},
+	{
+		"question": "Can there be any abstract method without abstract class?",
+		"answer": "No, if there is any abstract method in a class, that class must be abstract."
+	},
+	{
+		"question": "Can you use abstract and final both with a method?",
+		"answer": "No, because abstract method needs to be overridden whereas you can't override final method."
+	},
+	{
+		"question": "Is it possible to instantiate the abstract class?",
+		"answer": "No, abstract class can never be instantiated."
+	},
+	{
+		"question": "What is interface?",
+		"answer": "Interface is a blueprint of a class that have static constants and abstract methods.It can be used to achieve fully abstraction and multiple inheritance."
+	},
+	{
+		"question": "Can you declare an interface method static?",
+		"answer": "No, because methods of an interface is abstract by default, and static and abstract keywords can't be used together."
+	},
+	{
+		"question": "Can an Interface be final?",
+		"answer": "No, because its implementation is provided by another class."
+	},
+	{
+		"question": "What is marker interface?",
+		"answer": "An interface that have no data member and method is known as a marker interface.For example Serializable, Cloneable etc"
+	},
+	{
+		"question": "What is difference between abstract class and interface?",
+		"answer": "An abstract class can have method body (non-abstract methods).Interface have only abstract methods"
+	},
+	{
+		"question": "Can we define private and protected modifiers for variables in interfaces?",
+		"answer": "No, they are implicitly public"
+	},
+	{
+		"question": "When can an object reference be cast to an interface reference?",
+		"answer": "An object reference can be cast to an interface reference when the object implements the referenced interface."
+	},
+	{
+		"question": " What is package?",
+		"answer": "A package is a group of similar type of classes interfaces and sub-packages. It provides access protection and removes naming collision"
+	},
+	{
+		"question": "Do I need to import java.lang package any time? Why ?",
+		"answer": "No. It is by default loaded internally by the JVM."
+	},
+	{
+		"question": "Can I import same package/class twice? Will the JVM load the package twice at runtime?",
+		"answer": "One can import the same package or same class multiple times. Neither compiler nor JVM complains about it.But the JVM will internally load the class only once no matter how many times you import the same class."
+	},
+	{
+		"question": "What is static import ?",
+		"answer": "By static import, we can access the static members of a class directly, there is no to qualify it with the class name."
+	},
+	{
+		"question": "What is Exception Handling?",
+		"answer": "Exception Handling is a mechanism to handle runtime errors.It is mainly used to handle checked exceptions"
+	},
+	{
+		"question": "What is difference between Checked Exception and Unchecked Exception?",
+		"answer": "The classes that extend Throwable class except RuntimeException and Error are known as checked exceptions e.g.IOException,SQLException etc. Checked exceptions are checked at compile-time.\nThe classes that extend RuntimeException are known as unchecked exceptions e.g. ArithmeticException,NullPointerException etc. Unchecked exceptions are not checked at compile-time."
+	},
+	{
+		"question": "What is the base class for Error and Exception?",
+		"answer": "Throwable"
+	},
+	{
+		"question": "Is it necessary that each try block must be followed by a catch block?",
+		"answer": "It is not necessary that each try block must be followed by a catch block. It should be followed by either a catch block OR a finally block. And whatever exceptions are likely to be thrown should be declared in the throws clause of the method."
+	},
+	{
+		"question": "What is finally block?",
+		"answer": "finally block is a block that is always executed"
+	},
+	{
+		"question": "Can finally block be used without catch?",
+		"answer": "Yes, by try block. finally must be followed by either try or catch."
+	},
+	{
+		"question": "Is there any case when finally will not be executed?",
+		"answer": "finally block will not be executed if program exits(either by calling System.exit() or by causing a fatal error that causes the process to abort)"
+	},
+	{
+		"question": "What is difference between throw and throws?",
+		"answer": "Throw is used to explicitly throw an exception.Throws is used to declare an exception"
+	},
+	{
+		"question": "Can an exception be rethrown?",
+		"answer": "Yes."
+	},
+	{
+		"question": "Can subclass overriding method declare an exception if parent class method doesn't throw an exception ?",
+		"answer": "Yes but only unchecked exception not checked."
+	},
+	{
+		"question": "What is exception propagation ?",
+		"answer": "Forwarding the exception object to the invoking method is known as exception propagation."
+	},
+	{
+		"question": "What is the meaning of immutable in terms of String?",
+		"answer": "The simple meaning of immutable is unmodifiable or unchangeable. Once string object has been created, its value can't be changed."
+	},
+	{
+		"question": "Why string objects are immutable in java?",
+		"answer": "Because java uses the concept of string literal. Suppose there are 5 reference variables,all referes to one object 'sachin'.If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why string objects are immutable in java."
+	},
+	{
+		"question": "How many ways we can create the string object?",
+		"answer": "There are two ways to create the string object, by string literal and by new keyword"
+	},
+	{
+		"question": "How many objects will be created in the following code?\nString s1=\"Welcome\";  \nString s2=\"Welcome\";\nString s3=\"Welcome\";",
+		"answer": "Only one object."
+	},
+	{
+		"question": "Why java uses the concept of string literal?",
+		"answer": "To make Java more memory efficient (because no new objects are created if it exists already in string constant pool)."
+	},
+	{
+		"question": "How many objects will be created in the following code?\nString s = new String(\"Welcome\");  ",
+		"answer": "Two objects, one in string constant pool and other in non-pool(heap)"
+	},
+	{
+		"question": "What is the basic difference between string and stringbuffer object?",
+		"answer": "String is an immutable object. StringBuffer is a mutable object"
+	},
+	{
+		"question": "What is the difference between StringBuffer and StringBuilder ?",
+		"answer": "StringBuffer is synchronized whereas StringBuilder is not synchronized."
+	},
+	{
+		"question": "How can we create immutable class in java ?",
+		"answer": "We can create immutable class as the String class by defining final class"
+	},
+	{
+		"question": "What is the purpose of toString() method in java ?",
+		"answer": "The toString() method returns the string representation of any object. If you print any object, java compiler internally invokes the toString() method on the object. So overriding the toString() method, returns the desired output, it can be the state of an object etc. depends on your implementation."
+	},
+	{
+		"question": "What is nested class?",
+		"answer": "A class which is declared inside another class is known as nested class. There are 4 types of nested class member inner class, local inner class, annonymous inner class and static nested class."
+	},
+	{
+		"question": "Is there any difference between nested classes and inner classes?",
+		"answer": "Yes, inner classes are non-static nested classes i.e. inner classes are the part of nested classes."
+	},
+	{
+		"question": "Can we access the non-final local variable, inside the local inner class?",
+		"answer": "No, local variable must be constant if you want to access it in local inner class."
+	},
+	{
+		"question": "What is nested interface ?",
+		"answer": "Any interface i.e. declared inside the interface or class, is known as nested interface. It is static by default."
+	},
+	{
+		"question": "Can a class have an interface?",
+		"answer": "Yes, it is known as nested interface"
+	},
+	{
+		"question": "Can an Interface have a class?",
+		"answer": "Yes, they are static implicitely."
+	},
+	{
+		"question": " What is Garbage Collection?",
+		"answer": "Garbage collection is a process of reclaiming the runtime unused objects.It is performed for memory management."
+	},
+	{
+		"question": "What is gc()?",
+		"answer": "gc() is a daemon thread.gc() method is defined in System class that is used to send request to JVM to perform garbage collection."
+	},
+	{
+		"question": "What is the purpose of finalize() method?",
+		"answer": "finalize() method is invoked just before the object is garbage collected.It is used to perform cleanup processing."
+	},
+	{
+		"question": " Can an unrefrenced objects be refrenced again?",
+		"answer": "Yes."
+	},
+	{
+		"question": "What kind of thread is the Garbage collector thread?",
+		"answer": "Daemon thread."
+	},
+	{
+		"question": "What is difference between final, finally and finalize?",
+		"answer": " final is a keyword, final can be variable, method or class.You, can't change the value of final variable, can't override final method, can't inherit final class.finally: finally block is used in exception handling. finally block is always executed.finalize():finalize() method is used in garbage collection.finalize() method is invoked just before the object is garbage collected.The finalize() method can be used to perform any cleanup processing.ge the value of final variable, can't override final method, can't inherit final class."
+	},
+	{
+		"question": "What is the purpose of the Runtime class?",
+		"answer": "The purpose of the Runtime class is to provide access to the Java runtime system."
+	},
+	{
+		"question": "How will you invoke any external process in Java?",
+		"answer": "By Runtime.getRuntime().exec(?) method."
+	},
+	{
+		"question": "What is the difference between the Reader/Writer class hierarchy and the InputStream/OutputStream class hierarchy?",
+		"answer": "The Reader/Writer class hierarchy is character-oriented, and the InputStream/OutputStream class hierarchy is byte-oriented."
+	},
+	{
+		"question": "What an I/O filter?",
+		"answer": "An I/O filter is an object that reads from one stream and writes to another, usually altering the data in some way as it is passed from one stream to another."
+	},
+	{
+		"question": "What is serialization?",
+		"answer": "Serialization is a process of writing the state of an object into a byte stream.It is mainly used to travel object's state on the network."
+	},
+	{
+		"question": "What is Deserialization?",
+		"answer": "Deserialization is the process of reconstructing the object from the serialized state.It is the reverse operation of serialization"
+	},
+	{
+		"question": " What is transient keyword?",
+		"answer": "If you define any data member as transient,it will not be serialized"
+	},
+	{
+		"question": "What is Externalizable?",
+		"answer": "Externalizable interface is used to write the state of an object into a byte stream in compressed format.It is not a marker interface"
+	},
+	{
+		"question": "What is the difference between Serializalble and Externalizable interface?",
+		"answer": "Serializable is a marker interface but Externalizable is not a marker interface.When you use Serializable interface, your class is serialized automatically by default. But you can override writeObject() and readObject() two methods to control more complex object serailization process. When you use Externalizable interface, you have a complete control over your class's serialization process."
+	},
+	{
+		"question": "How do I convert a numeric IP address like 192.18.97.39 into a hostname like java.sun.com?",
+		"answer": "By InetAddress.getByName(\"192.18.97.39\").getHostName() where 192.18.97.39 is the IP address."
+	},
+	{
+		"question": "What is reflection?",
+		"answer": "Reflection is the process of examining or modifying the runtime behaviour of a class at runtime.It is used in:\nIDE (Integreted Development Environment) e.g. Eclipse, MyEclipse, NetBeans.\nDebugger\nTest Tools etc."
+	},
+	{
+		"question": "Can you access the private method from outside the class?",
+		"answer": "Yes, by changing the runtime behaviour of a class if the class is not secured."
+	},
+	{
+		"question": "What are wrapper classes?",
+		"answer": "Wrapper classes are classes that allow primitive types to be accessed as objects"
+	},
+	{
+		"question": "What is a native method?",
+		"answer": "A native method is a method that is implemented in a language other than Java."
+	},
+	{
+		"question": "What is the purpose of the System class?",
+		"answer": "The purpose of the System class is to provide access to system resources."
+	},
+	{
+		"question": "What comes to mind when someone mentions a shallow copy in Java?",
+		"answer": "Object cloning."
+	},
+	{
+		"question": "What is singleton class?",
+		"answer": "Singleton class means that any given time only one instance of the class is present, in one JVM."
+	},
+	{
+		"question": "Which containers use a border layout as their default layout?",
+		"answer": "The Window, Frame and Dialog classes use a border layout as their default layout."
+	},
+	{
+		"question": "Which containers use a FlowLayout as their default layout?",
+		"answer": "The Panel and Applet classes use the FlowLayout as their default layout."
+	},
+	{
+		"question": "What are peerless components?",
+		"answer": "The peerless components are called light weight components."
+	},
+	{
+		"question": "is the difference between a Scrollbar and a ScrollPane?",
+		"answer": "A Scrollbar is a Component, but not a Container. A ScrollPane is a Container. A ScrollPane handles its own events and performs its own scrolling."
+	},
+	{
+		"question": "What is a lightweight component?",
+		"answer": "Lightweight components are the one which doesn?t go with the native call to obtain the graphical units. They share their parent component graphical units to render them. For example, Swing components."
+	},
+	{
+		"question": "What is a heavyweight component?",
+		"answer": "For every paint call, there will be a native call to get the graphical units.For Example, AWT."
+	},
+	{
+		"question": "What is an applet?",
+		"answer": "An applet is a small java program that runs inside the browser and generates dynamic contents."
+	},
+	{
+		"question": "Can you write a Java class that could be used both as an applet as well as an application?",
+		"answer": "Yes. Add a main() method to the applet."
+	},
+	{
+		"question": "What is Locale?",
+		"answer": "A Locale object represents a specific geographical, political, or cultural region."
+	},
+	{
+		"question": "How will you load a specific locale?",
+		"answer": "By ResourceBundle.getBundle(?) method."
+	},
+	{
+		"question": "What is a JavaBean?",
+		"answer": "are reusable software components written in the Java programming language, designed to be manipulated visually by a software development environment, like JBuilder or VisualAge for Java"
+	},
+	{
+		"question": "What is multithreading?",
+		"answer": "Multithreading is a process of executing multiple threads simultaneously. Its main advantage is:\nThreads share the same address space.\nThread is lightweight.\nCost of communication between process is low."
+	},
+	{
+		"question": "What is thread?",
+		"answer": "A thread is a lightweight subprocess.It is a separate path of execution.It is called separate path of execution because each thread runs in a separate stack frame."
+	},
+	{
+		"question": "What is the difference between preemptive scheduling and time slicing?",
+		"answer": "Under preemptive scheduling, the highest priority task executes until it enters the waiting or dead states or a higher priority task comes into existence. Under time slicing, a task executes for a predefined slice of time and then reenters the pool of ready tasks. The scheduler then determines which task should execute next, based on priority and other factors"
+	},
+	{
+		"question": "What does join() method?",
+		"answer": "The join() method waits for a thread to die. In other words, it causes the currently running threads to stop executing until the thread it joins with completes its task."
+	},
+	{
+		"question": "What is difference between wait() and sleep() method?",
+		"answer": "Wait:The wait() method is defined in Object class. wait() method releases the lock.\n Sleep():The sleep() method is defined in Thread class.The sleep() method doesn't releases the lock"
+	},
+	{
+		"question": "Is it possible to start a thread twice?",
+		"answer": "No, there is no possibility to start a thread twice. If we does, it throws an exception."
+	},
+	{
+		"question": "Can we call the run() method instead of start()?",
+		"answer": "yes, but it will not work as a thread rather it will work as a normal object so there will not be context-switching between the threads."
+	},
+	{
+		"question": "What about the daemon threads?",
+		"answer": "The daemon threads are basically the low priority threads that provides the background support to the user threads. It provides services to the user threads."
+	},
+	{
+		"question": "Can we make the user thread as daemon thread if thread is started?",
+		"answer": "No, if you do so, it will throw IllegalThreadStateException"
+	},
+	{
+		"question": "What is shutdown hook?",
+		"answer": "The shutdown hook is basically a thread i.e. invoked implicitely before JVM shuts down. So we can use it perform clean up resource."
+	},
+	{
+		"question": "When should we interrupt a thread?",
+		"answer": "We should interrupt a thread if we want to break out the sleep or wait state of a thread."
+	},
+	{
+		"question": "What is synchronization?",
+		"answer": "Synchronization is the capabilility of control the access of multiple threads to any shared resource.It is used:\nTo prevent thread interference.\nTo prevent consistency problem."
+	},
+	{
+		"question": "What is the purpose of Synchronized block?",
+		"answer": "Synchronized block is used to lock an object for any shared resource.\nScope of synchronized block is smaller than the method."
+	},
+	{
+		"question": "Can Java object be locked down for exclusive use by a given thread?",
+		"answer": "Yes. You can lock an object by putting it in a 'synchronized' block. The locked object is inaccessible to any thread other than the one that explicitly claimed it."
+	},
+	{
+		"question": " What is static synchronization?",
+		"answer": "If you make any static method as synchronized, the lock will be on the class not on object."
+	},
+	{
+		"question": "What is the difference between notify() and notifyAll()?",
+		"answer": "The notify() is used to unblock one waiting thread whereas notifyAll() method is used to unblock all the threads in waiting state."
+	},
+	{
+		"question": "What is deadlock?",
+		"answer": "Deadlock is a situation when two threads are waiting on each other to release a resource. Each thread waiting for a resource which is held by the other waiting thread."
+	},
+	{
+		"question": "What is the difference between ArrayList and Vector?",
+		"answer": "ArrayList is not synchronized.ArrayList is not a legacy class.ArrayList increases its size by 50% of the array size.\nVector is synchronized.Vector is a legacy class.Vector increases its size by doubling the array size."
+	},
+	{
+		"question": "What is the difference between ArrayList and LinkedList?",
+		"answer": "ArrayList uses a dynamic array.ArrayList is not efficient for manipulation because a lot of shifting is required.ArrayList is better to store and fetch data.\nLinkedList uses doubly linked list.\nLinkedList is efficient for manipulation.LinkedList is better to manipulate data."
+	},
+	{
+		"question": "What is the difference between Iterator and ListIterator?",
+		"answer": "Iterator traverses the elements in forward direction only.ListIterator traverses the elements in backward and forward directions both."
+	},
+	{
+		"question": "What is the difference between Iterator and Enumeration?",
+		"answer": "Iterator can traverse legacy and non-legacy elements.Enumeration can traverse only legacy elements."
+	},
+	{
+		"question": "What is the difference between List and Set?",
+		"answer": "List can contain duplicate elements whereas Set contains only unique elements."
+	},
+	{
+		"question": "What is the difference between HashSet and TreeSet?",
+		"answer": "HashSet maintains no order whereas TreeSet maintains ascending order."
+	},
+	{
+		"question": "What is the difference between Set and Map?",
+		"answer": "Set contains values only whereas Map contains key and values both"
+	},
+	{
+		"question": "What is the difference between HashSet and HashMap?",
+		"answer": "HashSet contains only values whereas HashMap contains entry(key,value). HashSet can be iterated but HashMap need to convert into Set to be iterated."
+	},
+	{
+		"question": "What is the difference between HashMap and TreeMap?",
+		"answer": "HashMap maintains no order but TreeMap maintains ascending order."
+	},
+	{
+		"question": "What is the difference between HashMap and Hashtable?",
+		"answer": "HashMap is not synchronized.HashMap can contain one null key and multiple null values.\nHashtable is synchronized.Hashtable cannot contain any null key or null value"
+	},
+	{
+		"question": "What is the difference between Collection and Collections?",
+		"answer": "Collection is an interface whereas Collections is a class. Collection interface provides normal functionality of data structure to List, Set and Queue. But, Collections class is to sort and synchronize collection elements."
+	},
+	{
+		"question": "What is the difference between Comparable and Comparator?",
+		"answer": "Comparable provides only one sort of sequence.Comparator provides multiple sort of sequences."
+	},
+	{
+		"question": " What is the advantage of Properties file?",
+		"answer": "If you change the value in properties file, you don't need to recompile the java class. So, it makes the application easy to manage."
+	},
+	{
+		"question": "What does the hashCode() method?",
+		"answer": "The hashCode() method returns a hash code value (an integer number).The hashCode() method returns the same integer number, if two keys (by calling equals() method) are same.But, it is possible that two hash code numbers can have different or same keys."
+	},
+	{
+		"question": "Why we override equals() method?",
+		"answer": "The equals method is used to check whether two objects are same or not. It needs to be overridden if we want to check the objects based on property.For example, Employee is a class that has 3 data members: id, name and salary. But, we want to check the equality of employee object on the basis of salary. Then, we need to override the equals() method."
+	},
+	{
+		"question": "How to synchronize List, Set and Map elements?",
+		"answer": "Yes, Collections class provides methods to make List, Set or Map elements as synchronized:public static List synchronizedList(List l){}\npublic static Set synchronizedSet(Set s){}\npublic static SortedSet synchronizedSortedSet(SortedSet s){}\npublic static Map synchronizedMap(Map m){}\npublic static SortedMap synchronizedSortedMap(SortedMap m){}"
+	},
+	{
+		"question": "What is the advantage of generic collection?",
+		"answer": "If we use generic class, we don't need typecasting. It is typesafe and checked at compile time."
+	},
+	{
+		"question": "What is hash-collision in Hashtable and how it is handled in Java?",
+		"answer": "Two different keys with the same hash value is known as hash-collision. Two different entries will be kept in a single hash bucket to avoid the collision."
+	},
+	{
+		"question": "What is the Dictionary class?",
+		"answer": "The Dictionary class provides the capability to store key-value pairs."
+	},
+	{
+		"question": "What is the default size of load factor in hashing based collection?",
+		"answer": "The default size of load factor is 0.75. The default capacity is computed as initial capacity * load factor. For example, 16 * 0.75 = 12. So, 12 is the default capacity of Map."
+	},
+	{
+		"question": "What is JDBC?",
+		"answer": "JDBC is a Java API that is used to connect and execute query to the database. JDBC API uses jdbc drivers to connects to the database."
+	},
+	{
+		"question": "What is JDBC Driver?",
+		"answer": "JDBC Driver is a software component that enables java application to interact with the database.There are 4 types of JDBC drivers:\n1.JDBC-ODBC bridge driver\n2.Native-API driver (partially java driver)\n3.Network Protocol driver (fully java driver)\n4.Thin driver (fully java driver)"
+	},
+	{
+		"question": "What are the steps to connect to the database in java?",
+		"answer": "Registering the driver class\nCreating connection\nCreating statement\nExecuting queries\nClosing connection"
+	},
+	{
+		"question": "What are the JDBC API components?",
+		"answer": "The java.sql package contains interfaces and classes for JDBC API.\nInterfaces:\nConnection\nStatement\nPreparedStatement\nResultSet\nResultSetMetaData\nDatabaseMetaData\nCallableStatement etc.\n\nClasses:\nDriverManager\nBlob\nClob\n\nTypes\nSQLException etc."
+	},
+	{
+		"question": "What are the JDBC statements?",
+		"answer": "There are 3 JDBC statements.\nStatement\nPreparedStatement\nCallableStatement"
+	},
+	{
+		"question": "What is the difference between Statement and PreparedStatement interface?",
+		"answer": "In case of Statement, query is complied each time whereas in case of PreparedStatement, query is complied only once. So performance of PreparedStatement is better than Statement."
+	},
+	{
+		"question": "How can we execute stored procedures and functions?",
+		"answer": "By using Callable statement interface, we can execute procedures and functions."
+	},
+	{
+		"question": " What is the role of JDBC DriverManager class?",
+		"answer": "The DriverManager class manages the registered drivers. It can be used to register and unregister drivers. It provides factory method that returns the instance of Connection."
+	},
+	{
+		"question": "What does the JDBC Connection interface?",
+		"answer": "The Connection interface maintains a session with the database. It can be used for transaction management. It provides factory methods that returns the instance of Statement, PreparedStatement, CallableStatement and DatabaseMetaData."
+	},
+	{
+		"question": "What does the JDBC ResultSet interface?",
+		"answer": "The ResultSet object represents a row of a table. It can be used to change the cursor pointer and get the information from the database."
+	},
+	{
+		"question": "What does the JDBC ResultSetMetaData interface?",
+		"answer": "The ResultSetMetaData interface returns the information of table such as total number of columns, column name, column type etc."
+	},
+	{
+		"question": "What does the JDBC DatabaseMetaData interface?",
+		"answer": "The DatabaseMetaData interface returns the information of the database such as username, driver name, driver version, number of tables, number of views etc."
+	},
+	{
+		"question": "Which interface is responsible for transaction management in JDBC?",
+		"answer": "The Connection interface provides methods for transaction management such as commit(), rollback() etc."
+	},
+	{
+		"question": "What is batch processing and how to perform batch processing in JDBC?",
+		"answer": "By using batch processing technique in JDBC, we can execute multiple queries. It makes the performance fast."
+	},
+	{
+		"question": "How can we store and retrieve images from the database?",
+		"answer": "By using PreparedStatement interface, we can store and retrieve images."
+	}
+]
