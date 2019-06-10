@@ -20,9 +20,7 @@ public interface IUserService {
    
     User findOne(String username);
 
-    
-	SearchResponse search(String string, String sortBy, String sortType, int llimit, int ulimit);
-    
+        
     String enableUser(Long userId, Boolean enabled);
     
     String deleteUser(Long userId);

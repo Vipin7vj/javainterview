@@ -5,6 +5,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -20,10 +23,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.interview.dao.IFileUploadDao;
-import com.interview.dao.IRoleDao;
-import com.interview.dao.IUserActivationDetailDao;
-import com.interview.dao.IUserDao;
+import com.interview.dao.repo.IFileUploadRepository;
+import com.interview.dao.repo.IRoleRepository;
+import com.interview.dao.repo.IUserActivationDetailRepository;
+import com.interview.dao.repo.IUserRepository;
 import com.interview.exception.AuthException;
 import com.interview.exception.RecordNotFoundException;
 import com.interview.model.FileUpload;
@@ -37,7 +40,6 @@ import com.interview.service.IUserService;
 import com.interview.util.Constants;
 import com.interview.util.Util;
 import com.interview.util.UtilMessages;
-import com.interview.util.model.SearchResponse;
 
 @Service(value = "userService")
 @CacheConfig(cacheNames = "User")
@@ -47,25 +49,29 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	private final String LOGGER_PRE = "inside @calss " + this.getClass().getName();
 	
 	@Autowired
-	private IUserDao dao;
+	private IUserRepository dao;
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Autowired
-	private IRoleDao roleDao;
+	private IRoleRepository roleDao;
 //
 //	@Autowired
 //	IMailService mailService;
 	
+	
+	 @PersistenceContext
+	    public EntityManager em;
+	 
 	@Autowired
-	IUserActivationDetailDao userActivationDetailDao;
+	IUserActivationDetailRepository userActivationDetailDao;
 	
 	@Autowired
     private IFileStorageService fileStorageService;
 	
 	@Autowired
-	private IFileUploadDao fileUploadDao;
+	private IFileUploadRepository fileUploadDao;
 	
 	 
 	
@@ -75,7 +81,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 	public UserDetails loadUserByUsername(String username) throws LockedException {
 		LOGGER.info("in load user by name:: " + username);
-		User user = dao.findByUsername(username);
+		User user = dao.findByUsernameOrEmail(username,username);
 		
 		if(user == null) {
 			LOGGER.error("Invalid username or password.");
@@ -90,7 +96,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	
 	@Override
 	public User findOne(String username) {
-		return dao.findByUsername(username);
+		return dao.findByUsernameOrEmail(username, username);
 	}
 	
 	
@@ -114,9 +120,9 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	            return Util.getMessage(UtilMessages.USER_EMAIL_EXIST, false);
 	        }
 			Role role = null;
-			User oldUser = dao.findByUsername(user.getUsername());
+			User oldUser = dao.findByUsernameOrEmail(user.getUsername(), user.getUsername());
 			if( !user.getRoles().isEmpty() ) { 
-				role = roleDao.findById(user.getRoles().iterator().next().getId());
+				role = roleDao.findById(user.getRoles().iterator().next().getId()).orElse(null);
 				if(user.getUsername() != null && oldUser == null) {
 					Set<Role> roles = new HashSet<Role>();
 					roles.add(role);
@@ -166,14 +172,6 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	
 	
 	
-	@Override
-	@Cacheable
-	@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
-	public SearchResponse search(String string, String sortBy, String sortType,int page,int limit) {
-		return dao.search(string, page, limit, sortBy,sortType);
-		
-	}
-
 
 
 
@@ -187,11 +185,25 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 		return dao.findById(id);
 	}
 
+	public String enabledUser(Long userId, Boolean enabled) {
+		try{
+			Query q = em.createNamedQuery("enableUser")
+			.setParameter("userId", userId)
+			.setParameter("enabled", enabled);
+			q.executeUpdate();
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+		return "success";
+		
+	}
+	
 	@Override
 	public String enableUser(Long userId, Boolean enabled) {
 		
 		try{
-			 String result = dao.enableUser(userId, enabled);
+			 String result = enabledUser(userId, enabled);
 			 if(result == null){
 				return Util.getMessage(UtilMessages.SOMETHING_WENT_WRONG,false);
 			}
@@ -201,13 +213,25 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 		}
 		return Util.getMessage(enabled ? UtilMessages.USER_ENABLED_SUCCESS : UtilMessages.USER_DISABLED_SUCCESS,true);
 	}
-	
+	public boolean deletedUser(Long userId) {
+		try{
+			Query q = em.createNamedQuery("deleteUser")
+			.setParameter("userId", userId)
+			.setParameter("deleted", true);
+			q.executeUpdate();
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return false;
+		}
+		return true;
+		
+	}
 	@Override
 	public String deleteUser(Long userId) {
 		boolean deleted = false;
 		LOGGER.info(LOGGER_PRE + " delete userid {}",userId);
 		try { 
-				deleted = dao.deleteUser(userId);
+				deleted = deletedUser(userId);
 			
 		} catch(Exception ex) {
 			ex.printStackTrace();
@@ -227,7 +251,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	        if (userExists != null) {
 	            return Util.getMessage(UtilMessages.USER_EMAIL_EXIST, false);
 	        }
-            User oldUser = dao.findByUsername(user.getUsername());
+            User oldUser = dao.findByUsernameOrEmail(user.getUsername(), user.getUsername());
 			Role role = roleDao.findByName(Constants.ROLE_USER);
 			
 				if(user.getUsername() != null && oldUser == null) {
@@ -341,7 +365,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	@Override
 	@Transactional
 	public String activateUser(String token) {
-		UserActivationDetail uad = userActivationDetailDao.findByToken(token);
+		UserActivationDetail uad = userActivationDetailDao.findByActivationTokenAndValidTrue(token);
 		Date currentDate = new Date(System.currentTimeMillis()*1000);
 		String msg = null;
 		if(uad != null) {
@@ -410,7 +434,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	public String resetPassword(LoginUser user, String token) {
 		String msg = null;
 		try {
-			UserActivationDetail uad = userActivationDetailDao.findByToken(token);
+			UserActivationDetail uad = userActivationDetailDao.findByActivationTokenAndValidTrue(token);
 			Date currentDate = new Date(System.currentTimeMillis()*1000);
 			if(uad != null && uad.isValid() && uad.getTokenExpireOn().before(currentDate)) {
 				User oldUser = dao.findById(uad.getUserId());

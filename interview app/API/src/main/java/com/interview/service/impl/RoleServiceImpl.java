@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.interview.dao.IRoleDao;
+import com.interview.dao.repo.IRoleRepository;
 import com.interview.model.Role;
 import com.interview.service.IRoleService;
 
@@ -15,7 +16,7 @@ import com.interview.service.IRoleService;
 public class RoleServiceImpl implements IRoleService{
 	
 	@Autowired
-	IRoleDao dao;
+	IRoleRepository dao;
 	
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
