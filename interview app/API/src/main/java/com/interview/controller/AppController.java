@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.interview.dao.IUserDao;
+import com.interview.dao.repo.IUserRepository;
 import com.interview.model.User;
 
 @RestController
@@ -20,7 +20,7 @@ public class AppController {
 	private final Logger LOGGER  = Logger.getLogger(this.getClass());
 	
 	@Autowired
-	IUserDao userDao;
+	IUserRepository userDao;
 	
 	
 	@RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
@@ -34,7 +34,7 @@ public class AppController {
     public User profile() {
 		LOGGER.info("entry for /profile");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = userDao.findByUsername(authentication.getName());
+        User user = userDao.findByUsernameOrEmail(authentication.getName(),authentication.getName());
         return user;
 	}
 	

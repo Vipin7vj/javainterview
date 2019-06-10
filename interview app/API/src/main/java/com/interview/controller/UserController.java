@@ -70,12 +70,7 @@ public class UserController {
        
     }
 	
-	@GetMapping(value={"/search"})
-	public SearchResponse search(@RequestParam(value="q") String q,@RequestParam(value="sortBy",defaultValue="id") String sortBy,@RequestParam(value="sortType", defaultValue="desc") String sortType,@RequestParam(value="page",defaultValue="1") int page,@RequestParam(value="limit",defaultValue="5") int limit) {
-		LOGGER.info("inside @class UserController @method search entry..");
-		return userService.search(q,sortBy,sortType,page,limit);
-		
-	}
+
 
 	@PostMapping("/enable/{userId}/{enabled}")
 	public String createNewUser(@PathVariable("userId") Long userId, @PathVariable("enabled") Boolean enabled) {
