@@ -6,3 +6,7 @@
 /.mvn/
 /.settings/
 /publish.properties
+/.project
+/.gitignore
+node_modules/
+ 
