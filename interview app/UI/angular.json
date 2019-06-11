@@ -40,7 +40,8 @@
               },
               {
                 "input": "src/app/app.scss"
-              }
+              },
+              "src/developer.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true

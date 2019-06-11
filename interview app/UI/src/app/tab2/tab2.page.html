@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Create Account
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-item>
+    <ion-label>First Name<span class="bg-red">*</span></ion-label>
+    <ion-input pattern="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Last Name<span class="bg-red">*</span></ion-label>
+    <ion-input pattern="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Email<span class="bg-red">*</span></ion-label>
+    <ion-input pattern="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Password<span class="bg-red">*</span></ion-label>
+    <ion-input pattern="password"></ion-input>
+  </ion-item>
+
+  <ion-button color="primary">Register</ion-button>
+</ion-content>
