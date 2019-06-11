@@ -1,0 +1,7 @@
+.bg-red {
+  color: red;
+}
+
+:root {
+  --primary-color: orange;
+}
