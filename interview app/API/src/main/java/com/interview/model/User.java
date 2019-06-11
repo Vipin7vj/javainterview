@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.interview.listener.JPAListener;
 
 import io.jsonwebtoken.lang.Collections;
 import lombok.AllArgsConstructor;
@@ -43,7 +45,7 @@ import lombok.ToString;
 
 @Entity
 @Table(name="user")
-
+@EntityListeners(JPAListener.class)
 @Getter
 @Setter
 @NoArgsConstructor
