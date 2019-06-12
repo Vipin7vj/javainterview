@@ -10,7 +10,7 @@ export class CustomHttpService {
   constructor(private httpClient: HttpClient) {}
 
   private httpOptions = {
-    headers: new HttpHeaders({
+    headers: new HttpHeaders({ 
       "Content-Type": "application/json",
       Authorization: "my-auth-token"
     })
