@@ -9,9 +9,7 @@ import com.interview.model.User;
 @Repository
 @Transactional(readOnly = true)
 public interface IUserRepository extends JpaRepository<User, Long> {
-	
-	User findByUsernameOrEmail(String username,String email);
-	
-	User findByEmail(String email);
+
+	User findByUsername(String username);
 
 }

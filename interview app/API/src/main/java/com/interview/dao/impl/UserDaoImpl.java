@@ -26,7 +26,7 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements IUserDao {
 	
 	@Override
 	public User findByUsername(String email) {
-		return repo.findByEmail(email);
+		return repo.findByUsername(email);
 //		try{
 //			Query q = getEntityManager().createNamedQuery("findByName")
 //			.setParameter("userName", username);
@@ -37,18 +37,7 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements IUserDao {
 	}
 
 
-	@Override
-	public User findByEmail(String email) {
-		try{
-			Query q = getEntityManager().createNamedQuery("findByEmail")
-			.setParameter("email", email);
-			return (User) q.getSingleResult();
-		}catch(Exception ex){
-			LOGGER.error("no user found by email : {}", email);
-			return null;
-		}
-		
-	}
+	
 
 
 	@Override
@@ -117,10 +106,6 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements IUserDao {
 	}
 
 
-	@Override
-	public User findByUsernameOrEamil(String username, String email) {
-		return repo.findByUsernameOrEmail(username, email);
-	}
 
 
 	

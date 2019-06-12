@@ -76,9 +76,9 @@ public class User  implements UserDetails{
 	@Column(name="mobile")
 	private String mobile;
 	
-	@Column(name="email")
-	private String email;
-	
+//	@Column(name="email")
+//	private String email;
+//	
 	@Column(name="password")
 	private String password;
 	

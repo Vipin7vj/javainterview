@@ -40,7 +40,6 @@ import com.interview.util.UtilMessages;
 import com.interview.util.model.SearchResponse;
 
 @Service(value = "userService")
-@CacheConfig(cacheNames = "User")
 public class UserServiceImpl implements IUserService,UserDetailsService {
 
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
@@ -71,8 +70,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	
 	
 	
-	@Cacheable
-	@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+
 	public UserDetails loadUserByUsername(String username) throws LockedException {
 		LOGGER.info("in load user by name:: " + username);
 		User user = dao.findByUsername(username);
@@ -109,7 +107,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	public String save(User user) {
 		try {
 			 
-			User userExists = dao.findByEmail(user.getEmail());
+			User userExists = dao.findByUsername(user.getUsername());
 	        if (userExists != null) {
 	            return Util.getMessage(UtilMessages.USER_EMAIL_EXIST, false);
 	        }
@@ -151,10 +149,9 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	
 
 	@Override
-	@Cacheable
-	@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+
 	public User findByEmail(String email) {
-		return dao.findByEmail(email);
+		return dao.findByUsername(email);
 	}
 	
 	
@@ -167,8 +164,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	
 	
 	@Override
-	@Cacheable
-	@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+
 	public SearchResponse search(String string, String sortBy, String sortType,int page,int limit) {
 		return dao.search(string, page, limit, sortBy,sortType);
 		
@@ -223,7 +219,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	public String signup(User user) {
 		try {
 			
-			User userExists = dao.findByEmail(user.getEmail());
+			User userExists = dao.findByUsername(user.getUsername());
 	        if (userExists != null) {
 	            return Util.getMessage(UtilMessages.USER_EMAIL_EXIST, false);
 	        }
@@ -372,7 +368,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	public String forgetPassword(LoginUser user) {
 		String msg = null;
 		try {
-				User oldUser = dao.findByEmail(user.getEmail());
+				User oldUser = dao.findByUsername(user.getEmail());
 				if(oldUser != null) {
 					UserActivationDetail uad = userActivationDetailDao.findByUserId(oldUser.getId());
 					if(uad !=null) {
