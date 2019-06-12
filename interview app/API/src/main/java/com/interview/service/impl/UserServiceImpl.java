@@ -94,7 +94,7 @@ public class UserServiceImpl implements IUserService,UserDetailsService {
 	
 	
 	private User setUserInitialDetails(User user) {
-		user.setEnabled(false);
+		user.setEnabled(true);
 		user.setAccountNonExpired(true);
 		user.setCredentialsNonExpired(true);
 		user.setLocked(false);
