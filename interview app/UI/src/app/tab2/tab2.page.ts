@@ -23,7 +23,7 @@ export class Tab2Page {
         this.presentToastWithOptions(response.msg);
       }
     )
-  }
+  } 
 
   async presentToastWithOptions(message: string) {
     const toast = await this.toastController.create({
