@@ -7,31 +7,24 @@
 </ion-header>
 
 <ion-content>
+
   <ion-item>
-    <ion-label position="floating" 
-      >First Name<span class="bg-red">*</span></ion-label
-    >
+    <ion-label position="floating">First Name<span class="bg-red">*</span></ion-label>
     <ion-input [(ngModel)]="registerationData.firstName" pattern="text"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating"
-      >Last Name<span class="bg-red">*</span></ion-label
-    >
+    <ion-label position="floating">Last Name<span class="bg-red">*</span></ion-label>
     <ion-input [(ngModel)]="registerationData.lastName" pattern="text"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating" size="20"
-      >Email<span class="bg-red">*</span></ion-label
-    >
-    <ion-input [(ngModel)]="registerationData.email" size="20" required="true" pattern="email"></ion-input>
+    <ion-label position="floating" size="20">Email<span class="bg-red">*</span></ion-label>
+    <ion-input [(ngModel)]="registerationData.username" size="20" required="true" pattern="email"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating"
-      >Password<span class="bg-red">*</span></ion-label
-    >
+    <ion-label position="floating">Password<span class="bg-red">*</span></ion-label>
     <ion-input type="password" [(ngModel)]="registerationData.password" pattern="password"></ion-input>
   </ion-item>
 

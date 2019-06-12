@@ -1,6 +1,6 @@
 export class ResponseWrapper {
   stusvPortalException?: any;
   statusCode?: any;
-  message?: string;
+  msg?: string;
   data?: any;
 }
