@@ -4,4 +4,5 @@ export class RegistrationModel {
   lastName?: string;
   email?: string;
   password?: string;
+  confirmPassword?:string;
 }
