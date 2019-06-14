@@ -4,12 +4,14 @@ import { RegisterUserService } from "./service/registration-service";
 import { ToastController } from '@ionic/angular';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { REGISTRATION_VALIDATION_MESSAGE } from './constants/registration-constants';
+import { REGISTRATION_VALIDATION_MESSAGE, PasswordValidator } from './constants/registration-constants';
+
 @Component({
   selector: "app-tab2",
   templateUrl: "tab2.page.html",
   styleUrls: ["tab2.page.scss"]
 })
+
 export class Tab2Page {
 
   public slideOneForm: FormGroup;
@@ -17,9 +19,31 @@ export class Tab2Page {
   public validationMessage: any;
   public registerationData: RegistrationModel = {};
 
-
   constructor(private registerationService: RegisterUserService, private messageService: MessageService,
     public toastController: ToastController, public formBuilder: FormBuilder) {
+    this.validators(formBuilder);
+  }
+
+  ngOnInit() { }
+
+  onRegisterBtnClick() {
+
+    if (this.slideOneForm.status == "INVALID") {
+      this.presentToastWithOptions("Please fill data correctly");
+    } else {
+      this.registerationService.addUser(this.registerationData).subscribe(
+        response => {
+          this.presentToastWithOptions(response.msg);
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+
+  }
+
+  validators(formBuilder: FormBuilder) {
     this.slideOneForm = formBuilder.group({
       firstName: ['', Validators.compose([Validators.maxLength(30),
       Validators.required])],
@@ -33,38 +57,12 @@ export class Tab2Page {
         Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{5,}$/) //this is for the letters (both uppercase and lowercase) and numbers validation
       ])),
       confirm_password: new FormControl('', Validators.required)
-    }, (formGroup: FormGroup) => {
-      return this.areEqual(formGroup);
-    });
-
-    /* this.matching_passwords_group = new FormGroup({
-      password: new FormControl('', Validators.compose([
-        Validators.minLength(5),
-        Validators.required,
-        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$') //this is for the letters (both uppercase and lowercase) and numbers validation
-      ])),
-      confirm_password: new FormControl('', Validators.required)
-    }, (formGroup: FormGroup) => {
-      return this.areEqual(formGroup);
-    }); */
+    },
+      {
+        validators: this.MustMatch('password', 'confirm_password')
+      });
 
     this.validationMessage = REGISTRATION_VALIDATION_MESSAGE;
-  }
-
-
-
-  ngOnInit() { }
-
-  onRegisterBtnClick() {
-    console.log(this.slideOneForm)
-    this.registerationService.addUser(this.registerationData).subscribe(
-      response => {
-        this.presentToastWithOptions(response.msg);
-      },
-      error => {
-        console.log(error)
-      }
-    )
   }
 
   async presentToastWithOptions(message: string) {
@@ -76,30 +74,16 @@ export class Tab2Page {
     toast.present();
   }
 
-  areEqual(formGroup: FormGroup) {
-    let value;
-    let valid = true;
-    for (let key in formGroup.controls) {
-      if (formGroup.controls.hasOwnProperty(key)) {
-        let control: FormControl = <FormControl>formGroup.controls[key];
-
-        if (value === undefined) {
-          value = control.value
-        } else {
-          if (value !== control.value) {
-            valid = false;
-            break;
-          }
-        }
+  MustMatch(controlName: string, matchingControlName: string) {
+    return (formGroup: FormGroup) => {
+      const password = formGroup.controls[controlName];
+      const confirmPassword = formGroup.controls[matchingControlName];
+      if (password.value != confirmPassword.value) {
+        confirmPassword.setErrors({ mustMatch: true });
+        return false;
+      } else {
+        return true;
       }
     }
-
-    if (valid) {
-      return null;
-    }
-
-    return {
-      areEqual: true
-    };
   }
 }
