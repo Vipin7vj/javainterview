@@ -26,8 +26,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 	  
 	  List<String> details = new ArrayList<>();
 	  details.add(ex.getLocalizedMessage()); ErrorResponse error = new
-	  ErrorResponse("Server Error", details); return new ResponseEntity(error,
-	  HttpStatus.INTERNAL_SERVER_ERROR); }
+	  ErrorResponse("Server Error", details); 
+	 	ex.printStackTrace();
+	  return new ResponseEntity(error,HttpStatus.INTERNAL_SERVER_ERROR); 
+	  }
 	 
 	 
 	    @ExceptionHandler(RecordNotFoundException.class)

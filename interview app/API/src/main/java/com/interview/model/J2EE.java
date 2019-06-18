@@ -22,6 +22,6 @@ public class J2EE {
 	private Long topicid;
 	private String question;
 	private String answer;
-	private Integer fav;
+	private Long fav;
 	
 }

@@ -9,17 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.interview.dao.repo.ITopicRepository;
 import com.interview.model.Topic;
+import com.interview.service.ITopicService;
 
 @RestController
 @RequestMapping("topic")
 public class TopicController {
 	
 	@Autowired
-	ITopicRepository repo;
+	private ITopicService service;
+
 	
 	@GetMapping("")
 	public List<Topic> getAllTopic(){
-		return repo.findAll();
+		return service.findAllTopic();
 	}
+	
 
 }
