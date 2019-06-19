@@ -3,6 +3,7 @@ package com.interview.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import com.interview.model.Topic;
 import com.interview.service.ITopicService;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("topic")
 public class TopicController {
 	
@@ -19,7 +21,7 @@ public class TopicController {
 	private ITopicService service;
 
 	
-	@GetMapping("")
+	@GetMapping("/all")
 	public List<Topic> getAllTopic(){
 		return service.findAllTopic();
 	}
