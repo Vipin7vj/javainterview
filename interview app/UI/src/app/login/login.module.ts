@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
 import { ToastModule } from 'primeng/toast';
+import { AuthenticateService } from './service/authenticate.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ToastModule } from 'primeng/toast';
     FormsModule,
     ToastModule,
     CommonModule
-  ]
+  ],
+  providers:[AuthenticateService]
 })
 export class LoginModule { }

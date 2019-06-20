@@ -7,29 +7,29 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="slideOneForm">
+  <form [formGroup]="loginForm">
     <ion-item>
       <ion-label position="floating">Username<span class="bg-red">*</span></ion-label>
-      <ion-input formControlName="firstName" [(ngModel)]="registerationData.firstName"></ion-input>
+      <ion-input formControlName="username" [(ngModel)]="loginModel.username"></ion-input>
     </ion-item>
-    <mat-error *ngFor="let validation of validationMessage.firstName">
-      <mat-error class="error-message" *ngIf="slideOneForm.get('firstName').hasError(validation.type)  && (slideOneForm.get('firstName').dirty || slideOneForm.get('firstName').touched)">
+    <mat-error *ngFor="let validation of validationMessage.username">
+      <mat-error class="error-message" *ngIf="loginForm.get('username').hasError(validation.type)  && (loginForm.get('username').dirty || loginForm.get('username').touched)">
         {{validation.message}}</mat-error>
     </mat-error>
 
 
     <ion-item>
       <ion-label position="floating">Password<span class="bg-red">*</span></ion-label>
-      <ion-input formControlName="password" type="password" [(ngModel)]="registerationData.password">
+      <ion-input formControlName="password" type="password" [(ngModel)]="loginModel.password">
       </ion-input>
     </ion-item>
     <mat-error *ngFor="let validation of validationMessage.password">
-      <mat-error class="error-message" *ngIf="slideOneForm.get('password').hasError(validation.type) && (slideOneForm.get('password').dirty || slideOneForm.get('password').touched)">
+      <mat-error class="error-message" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
         {{validation.message}}</mat-error>
     </mat-error>
 
     <div>
-      <ion-button color="primary" (click)="onRegisterBtnClick()">Login</ion-button>
+      <ion-button color="primary" (click)="onLoginBtnClick()">Login</ion-button>
     </div>
   </form>
 </ion-content>
