@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="slideOneForm">
+    <ion-item>
+      <ion-label position="floating">Username<span class="bg-red">*</span></ion-label>
+      <ion-input formControlName="firstName" [(ngModel)]="registerationData.firstName"></ion-input>
+    </ion-item>
+    <mat-error *ngFor="let validation of validationMessage.firstName">
+      <mat-error class="error-message" *ngIf="slideOneForm.get('firstName').hasError(validation.type)  && (slideOneForm.get('firstName').dirty || slideOneForm.get('firstName').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+
+
+    <ion-item>
+      <ion-label position="floating">Password<span class="bg-red">*</span></ion-label>
+      <ion-input formControlName="password" type="password" [(ngModel)]="registerationData.password">
+      </ion-input>
+    </ion-item>
+    <mat-error *ngFor="let validation of validationMessage.password">
+      <mat-error class="error-message" *ngIf="slideOneForm.get('password').hasError(validation.type) && (slideOneForm.get('password').dirty || slideOneForm.get('password').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+
+    <div>
+      <ion-button color="primary" (click)="onRegisterBtnClick()">Login</ion-button>
+    </div>
+  </form>
+</ion-content>
