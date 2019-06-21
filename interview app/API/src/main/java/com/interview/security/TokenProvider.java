@@ -92,5 +92,13 @@ public class TokenProvider implements Serializable {
 
         return new UsernamePasswordAuthenticationToken(userDetails, "", authorities);
     }
+    public static String createToken(String username) {
+        String jwt = Jwts.builder()
+                .setSubject(username)
+                .setExpiration(new Date(System.currentTimeMillis() + ACCESS_TOKEN_VALIDITY_SECONDS * 1000))
+                .signWith(SignatureAlgorithm.HS256, SIGNING_KEY)
+                .compact();
 
+        return jwt;
+    }
 }
