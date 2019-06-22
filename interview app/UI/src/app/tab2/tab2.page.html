@@ -1,64 +1,12 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Create Account
+      Tab Three f
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="slideOneForm">
-    <ion-item>
-      <ion-label position="floating">First Name<span class="bg-red">*</span></ion-label>
-      <ion-input formControlName="firstName" [(ngModel)]="registerationData.firstName"></ion-input>
-    </ion-item>
-    <mat-error *ngFor="let validation of validationMessage.firstName">
-      <mat-error class="error-message" *ngIf="slideOneForm.get('firstName').hasError(validation.type)  && (slideOneForm.get('firstName').dirty || slideOneForm.get('firstName').touched)">
-        {{validation.message}}</mat-error>
-    </mat-error>
+  <ion-button color="primary" (click)="getAllTopics()">Topics</ion-button>
 
-    <ion-item>
-      <ion-label position="floating">Last Name<span class="bg-red">*</span></ion-label>
-      <ion-input formControlName="lastName" [(ngModel)]="registerationData.lastName"></ion-input>
-    </ion-item>
-    <mat-error *ngFor="let validation of validationMessage.lastName">
-      <mat-error class="error-message" *ngIf="slideOneForm.get('lastName').hasError(validation.type)  && (slideOneForm.get('lastName').dirty || slideOneForm.get('lastName').touched)">
-        {{validation.message}}</mat-error>
-    </mat-error>
-
-
-    <ion-item>
-      <ion-label position="floating" size="20">Email<span class="bg-red">*</span></ion-label>
-      <ion-input formControlName="email" [(ngModel)]="registerationData.username" size="20">
-      </ion-input>
-    </ion-item>
-    <mat-error *ngFor="let validation of validationMessage.email">
-      <mat-error class="error-message" *ngIf="slideOneForm.get('email').hasError(validation.type)  && (slideOneForm.get('email').dirty || slideOneForm.get('email').touched)">
-        {{validation.message}}</mat-error>
-    </mat-error>
-
-    <ion-item>
-      <ion-label position="floating">Password<span class="bg-red">*</span></ion-label>
-      <ion-input formControlName="password" type="password" [(ngModel)]="registerationData.password">
-      </ion-input>
-    </ion-item>
-    <mat-error *ngFor="let validation of validationMessage.password">
-      <mat-error class="error-message" *ngIf="slideOneForm.get('password').hasError(validation.type) && (slideOneForm.get('password').dirty || slideOneForm.get('password').touched)">
-        {{validation.message}}</mat-error>
-    </mat-error>
-
-    <ion-item>
-      <ion-label position="floating">Confirm Password<span class="bg-red">*</span></ion-label>
-      <ion-input formControlName="confirm_password" type="password" [(ngModel)]="registerationData.confirmPassword">
-      </ion-input>
-    </ion-item>
-    <mat-error *ngFor="let validation of validationMessage.confirm_password">
-      <mat-error class="error-message" *ngIf="(slideOneForm.get('confirm_password').hasError(validation.type)|| slideOneForm.get('confirm_password').hasError(validation.type)) && (slideOneForm.get('confirm_password').dirty || slideOneForm.get('confirm_password').touched)">
-        {{validation.message}}</mat-error>
-    </mat-error>
-    <div>
-      <ion-button color="primary" (click)="onRegisterBtnClick()">Register</ion-button>
-    </div>
-    <p-toast key="reg"></p-toast>
-  </form>
 </ion-content>

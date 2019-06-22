@@ -2,7 +2,7 @@ import { Constants } from "src/app/shared/constants/shared-constants";
 import { FormControl, FormGroup, NgForm, FormGroupDirective } from '@angular/forms';
 
 export const REGISTER_USER: any = {
-  CREATE_USER: Constants.BASE_URL + "/api/j2ee/all"
+  CREATE_USER: Constants.BASE_URL + "/api/user/signup"
 };
 export const REGISTRATION_VALIDATION_MESSAGE = {
   'firstName': [

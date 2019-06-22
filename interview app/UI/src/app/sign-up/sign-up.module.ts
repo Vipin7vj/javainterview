@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login.component';
+import { SignUpComponent } from './sign-up.component';
 import { IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
 import { ToastModule } from 'primeng/toast';
-import { AuthenticateService } from './service/authenticate.service';
-import { InterceptorService } from './service/InterceptorService';
+import { RegisterUserService } from './service/registration-service';
 
 @NgModule({
-  declarations: [
-    LoginComponent
-  ],
+  declarations: [SignUpComponent],
   imports: [
     IonicModule,
     ReactiveFormsModule,
@@ -19,8 +16,7 @@ import { InterceptorService } from './service/InterceptorService';
     MatFormFieldModule,
     FormsModule,
     ToastModule,
-    CommonModule
   ],
-  providers: [AuthenticateService, InterceptorService]
+  providers:[RegisterUserService]
 })
-export class LoginModule { }
+export class SignUpModule { }

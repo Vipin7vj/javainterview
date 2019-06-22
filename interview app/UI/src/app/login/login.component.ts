@@ -4,6 +4,7 @@ import { ToastController } from '@ionic/angular';
 import { LOGIN_VALIDATION_MESSAGE } from './constants/login-constants';
 import { LoginUser } from './model/loginUser';
 import { AuthenticateService } from './service/authenticate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   public validationMessage: any;
   public loginModel: LoginUser = new LoginUser();
   constructor(public toastController: ToastController, public formBuilder: FormBuilder,
-    private loginService: AuthenticateService, ) {
+    private loginService: AuthenticateService, private router: Router) {
     this.validators(formBuilder);
   }
 
@@ -44,11 +45,12 @@ export class LoginComponent implements OnInit {
     } else {
       this.loginService.authenticate(this.loginModel).subscribe(
         response => {
-          console.log(response)
           sessionStorage.setItem('username', this.loginModel.username)
           let tokenStr = 'Bearer ' + response['token']
+          console.log(tokenStr)
           sessionStorage.setItem('token', tokenStr)
           this.presentToastWithOptions("User Logged in");
+          this.router.navigate(['/tabs/tab1'])
         },
         error => {
           console.log(error)

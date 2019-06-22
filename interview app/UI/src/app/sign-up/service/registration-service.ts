@@ -11,8 +11,8 @@ export class RegisterUserService {
 
     constructor(private customHttpService: CustomHttpService) { }
 
-    public getAll(): Observable<ResponseWrapper> {
-        return this.customHttpService.getCall(REGISTER_USER.CREATE_USER);
+    public addUser(registerationModel: RegistrationModel): Observable<ResponseWrapper> {
+        return this.customHttpService.postCall(registerationModel, REGISTER_USER.CREATE_USER);
     }
  
 }
