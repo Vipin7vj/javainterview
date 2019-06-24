@@ -1,4 +1,4 @@
-ion-content {
+/* ion-content {
     --ion-background-color: #f4f5f8;
   }
   ion-header {
@@ -6,5 +6,10 @@ ion-content {
   }
   .error-message{
     color:red;
+  } */
+  :host {
+    ion-content {
+      --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary))
+    }
   }
   

@@ -69,4 +69,8 @@ export class LoginComponent implements OnInit {
     toast.present();
   }
 
+  goToRegister() {
+    this.router.navigate(['/signup'])
+  }
+
 }
