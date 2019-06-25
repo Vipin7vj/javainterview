@@ -11,14 +11,22 @@
       </h3>
     </div>
 
-    <form [formGroup]="slideOneForm">
-      <ion-item>
-        <ion-label position="floating">First Name<span class="bg-red">*</span></ion-label>
-        <ion-input formControlName="firstName" [(ngModel)]="registerationData.firstName"></ion-input>
+    <form [formGroup]="slideOneForm" class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="person" item-start></ion-icon>
+          First Name<span class="bg-red">*</span>
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="firstName" [(ngModel)]="registerationData.firstName"></ion-input>
       </ion-item>
       <mat-error *ngFor="let validation of validationMessage.firstName">
-        <mat-error class="error-message" *ngIf="slideOneForm.get('firstName').hasError(validation.type)  && (slideOneForm.get('firstName').dirty || slideOneForm.get('firstName').touched)">
-          {{validation.message}}</mat-error>
+        <p ion-text class="text08" *ngIf="slideOneForm.get('firstName').hasError(validation.type)  && (slideOneForm.get('firstName').dirty || slideOneForm.get('firstName').touched)">
+          <!--        <mat-error class="error-message" *ngIf="slideOneForm.get('firstName').hasError(validation.type)  && (slideOneForm.get('firstName').dirty || slideOneForm.get('firstName').touched)"> -->
+          <ion-text color="warning">
+            {{validation.message}}
+          </ion-text>
+          <!-- </mat-error> -->
+        </p>
       </mat-error>
 
       <ion-item>
