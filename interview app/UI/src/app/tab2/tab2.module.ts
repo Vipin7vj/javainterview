@@ -16,6 +16,7 @@ import { Tab2Page } from './tab2.page';
     CommonModule,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastModule,
     RouterModule.forChild([{ path: '', component: Tab2Page }])
   ],
