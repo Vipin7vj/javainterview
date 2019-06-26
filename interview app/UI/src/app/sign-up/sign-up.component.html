@@ -29,48 +29,120 @@
         </p>
       </mat-error>
 
-      <ion-item>
-        <ion-label position="floating">Last Name<span class="bg-red">*</span></ion-label>
-        <ion-input formControlName="lastName" [(ngModel)]="registerationData.lastName"></ion-input>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="person" item-start></ion-icon>
+          Last Name<span class="bg-red">*</span>
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="lastName" [(ngModel)]="registerationData.lastName"></ion-input>
       </ion-item>
       <mat-error *ngFor="let validation of validationMessage.lastName">
-        <mat-error class="error-message" *ngIf="slideOneForm.get('lastName').hasError(validation.type)  && (slideOneForm.get('lastName').dirty || slideOneForm.get('lastName').touched)">
-          {{validation.message}}</mat-error>
+        <p ion-text class="text08" *ngIf="slideOneForm.get('lastName').hasError(validation.type)  && (slideOneForm.get('lastName').dirty || slideOneForm.get('lastName').touched)">
+          <!-- <mat-error class="error-message" *ngIf="slideOneForm.get('lastName').hasError(validation.type)  && (slideOneForm.get('lastName').dirty || slideOneForm.get('lastName').touched)"> -->
+          <ion-text color="warning">
+            {{validation.message}}
+          </ion-text>
+        </p>
+        <!--   </mat-error> -->
       </mat-error>
 
 
-      <ion-item>
-        <ion-label position="floating" size="20">Email<span class="bg-red">*</span></ion-label>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating" size="20">
+          <ion-icon name="mail" item-start></ion-icon>
+          Email<span class="bg-red">*</span>
+        </ion-label>
         <ion-input formControlName="email" [(ngModel)]="registerationData.username" size="20">
         </ion-input>
       </ion-item>
       <mat-error *ngFor="let validation of validationMessage.email">
-        <mat-error class="error-message" *ngIf="slideOneForm.get('email').hasError(validation.type)  && (slideOneForm.get('email').dirty || slideOneForm.get('email').touched)">
-          {{validation.message}}</mat-error>
+        <p ion-text class="text08" *ngIf="slideOneForm.get('email').hasError(validation.type)  && (slideOneForm.get('email').dirty || slideOneForm.get('email').touched)">
+          <!-- <mat-error class="error-message" *ngIf="slideOneForm.get('email').hasError(validation.type)  && (slideOneForm.get('email').dirty || slideOneForm.get('email').touched)"> -->
+          <ion-text color="warning">
+            {{validation.message}}
+          </ion-text>
+        </p>
+        <!--  </mat-error> -->
       </mat-error>
 
-      <ion-item>
-        <ion-label position="floating">Password<span class="bg-red">*</span></ion-label>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Password<span class="bg-red">*</span>
+        </ion-label>
         <ion-input formControlName="password" type="password" [(ngModel)]="registerationData.password">
         </ion-input>
       </ion-item>
       <mat-error *ngFor="let validation of validationMessage.password">
-        <mat-error class="error-message" *ngIf="slideOneForm.get('password').hasError(validation.type) && (slideOneForm.get('password').dirty || slideOneForm.get('password').touched)">
-          {{validation.message}}</mat-error>
+        <p ion-text class="text08" *ngIf="slideOneForm.get('password').hasError(validation.type) && (slideOneForm.get('password').dirty || slideOneForm.get('password').touched)">
+          <!-- <mat-error class="error-message" *ngIf="slideOneForm.get('password').hasError(validation.type) && (slideOneForm.get('password').dirty || slideOneForm.get('password').touched)"> -->
+          <ion-text color="warning">
+            {{validation.message}}
+          </ion-text>
+        </p>
+        <!--  </mat-error> -->
       </mat-error>
 
-      <ion-item>
-        <ion-label position="floating">Confirm Password<span class="bg-red">*</span></ion-label>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Confirm Password<span class="bg-red">*</span>
+        </ion-label>
         <ion-input formControlName="confirm_password" type="password" [(ngModel)]="registerationData.confirmPassword">
         </ion-input>
       </ion-item>
       <mat-error *ngFor="let validation of validationMessage.confirm_password">
-        <mat-error class="error-message" *ngIf="(slideOneForm.get('confirm_password').hasError(validation.type)|| slideOneForm.get('confirm_password').hasError(validation.type)) && (slideOneForm.get('confirm_password').dirty || slideOneForm.get('confirm_password').touched)">
-          {{validation.message}}</mat-error>
+        <p ion-text class="text08" *ngIf="(slideOneForm.get('confirm_password').hasError(validation.type)|| slideOneForm.get('confirm_password').hasError(validation.type)) && (slideOneForm.get('confirm_password').dirty || slideOneForm.get('confirm_password').touched)">
+          <!-- <mat-error class="error-message" *ngIf="(slideOneForm.get('confirm_password').hasError(validation.type)|| slideOneForm.get('confirm_password').hasError(validation.type)) && (slideOneForm.get('confirm_password').dirty || slideOneForm.get('confirm_password').touched)"> -->
+          <ion-icon name="password" item-start>
+            {{validation.message}}
+          </ion-icon>
+        </p>
+        <!--   </mat-error> -->
       </mat-error>
-      <div>
-        <ion-button color="primary" (click)="onRegisterBtnClick()">Register</ion-button>
-      </div>
     </form>
+    <div margin-top>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="signUp()" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Sign Up
+      </ion-button>
+
+      <p text-center>
+        <ion-text color="light">
+          Or Sign Up with:
+        </ion-text>
+      </p>
+
+      <ion-grid class="btn-group">
+        <ion-row>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span (click)="goToLogin()" tappable>
+        <ion-text color="light">
+          <strong>I have an account!</strong>
+        </ion-text>
+      </span>
+    </div>
+
   </div>
 </ion-content>

@@ -17,7 +17,7 @@ export class CustomHttpService {
   };
 
   public getCall(url: string): Observable<ResponseWrapper> {
-    return this.httpClient.get<ResponseWrapper>(url);
+    return this.httpClient.get(url);
   }
 
   public postCall(data: any, url: string): Observable<ResponseWrapper> {

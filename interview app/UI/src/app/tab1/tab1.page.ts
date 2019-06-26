@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Tab1Service } from './service/tab1.service';
+import { Topic } from './model/topic';
 
 @Component({
   selector: 'app-tab1',
@@ -7,9 +9,17 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  public topics: {}
+  constructor(private service: Tab1Service) { }
 
-  getAllTopics(){
-    
+  ngOnInit() {
+    this.getAllTopics()
+  }
+
+  getAllTopics() {
+    this.service.getAllTopics().subscribe(response => {
+      this.topics = response
+      console.log(this.topics)
+    })
   }
 }

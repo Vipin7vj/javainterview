@@ -4,6 +4,7 @@ import { ToastController } from '@ionic/angular';
 import { REGISTRATION_VALIDATION_MESSAGE } from './constants/registration-constants';
 import { RegistrationModel } from "./model/register-model";
 import { RegisterUserService } from "./service/registration-service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,7 +19,7 @@ export class SignUpComponent {
   public validationMessage: any;
   public registerationData: RegistrationModel = {};
 
-  constructor(private registerationService: RegisterUserService,
+  constructor(private registerationService: RegisterUserService, private router:Router,
     public toastController: ToastController, public formBuilder: FormBuilder) {
     this.validators(formBuilder);
   }
@@ -84,5 +85,9 @@ export class SignUpComponent {
         return true;
       }
     }
+  }
+
+  goToLogin(){
+    this.router.navigate(['/login'])
   }
 }
