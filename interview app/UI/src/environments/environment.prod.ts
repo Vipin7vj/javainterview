@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+    // apiUrl: 'https://api.judge0.com', 
+    apiUrl: 'https://v2.api.judge0.com', 
+  production: false
+  
 };
