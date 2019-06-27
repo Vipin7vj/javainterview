@@ -7,6 +7,8 @@ import { HomeModule } from './home/home.module';
 import { IonicModule } from '@ionic/angular';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignUpModule } from './sign-up/sign-up.module';
+import { QnAModule } from './qn-a/qn-a.module';
+import { QnAComponent } from './qn-a/qn-a.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,10 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
+ /*  {
+    path: 'qna',
+    component: QnAComponent,
+  }, */
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
 ];
 
@@ -34,6 +40,7 @@ const routes: Routes = [
     SignUpModule,
     IonicModule,
     LoginModule,
+    QnAModule,
     HomeModule,
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],

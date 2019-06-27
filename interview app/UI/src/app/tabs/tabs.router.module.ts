@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { QnAComponent } from '../qn-a/qn-a.component';
+import { QnAModule } from '../qn-a/qn-a.module';
 
 const routes: Routes = [
   {
@@ -13,9 +15,21 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab1/tab1.module#Tab1PageModule'
-          }
+          },
+          {
+            path: 'qna/:id',
+            component:QnAComponent,
+        /*     children: [
+              {
+                path: '',
+               // loadChildren: '../qna/qna.module#QnAModule'
+              },
+            ] */
+          },
+
         ]
       },
+
       {
         path: 'tab2',
         children: [
@@ -50,8 +64,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes)
+  RouterModule.forChild(routes),
+    QnAModule
   ],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

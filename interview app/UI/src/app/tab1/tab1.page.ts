@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tab1Service } from './service/tab1.service';
 import { Topic } from './model/topic';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -10,7 +11,8 @@ import { Topic } from './model/topic';
 export class Tab1Page {
 
   public topics: {}
-  constructor(private service: Tab1Service) { }
+  constructor(private service: Tab1Service,
+    private router: Router) { }
 
   ngOnInit() {
     this.getAllTopics()
@@ -19,7 +21,10 @@ export class Tab1Page {
   getAllTopics() {
     this.service.getAllTopics().subscribe(response => {
       this.topics = response
-      console.log(this.topics)
     })
+  }
+
+  onTopicClick(topic) {
+    this.router.navigate(['/tabs/tab1/qna', topic.id])
   }
 }
