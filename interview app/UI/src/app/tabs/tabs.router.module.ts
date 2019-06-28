@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { QnAComponent } from '../qn-a/qn-a.component';
 import { QnAModule } from '../qn-a/qn-a.module';
+import { AnswerComponent } from '../answer/answer.component';
+import { AnswerModule } from '../answer/answer.module';
 
 const routes: Routes = [
   {
@@ -18,15 +20,12 @@ const routes: Routes = [
           },
           {
             path: 'qna/:id',
-            component:QnAComponent,
-        /*     children: [
-              {
-                path: '',
-               // loadChildren: '../qna/qna.module#QnAModule'
-              },
-            ] */
+            component: QnAComponent,
           },
-
+          {
+            path: 'ans',
+            component: AnswerComponent
+          }
         ]
       },
 
@@ -57,15 +56,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
   imports: [
-  RouterModule.forChild(routes),
-    QnAModule
+    RouterModule.forChild(routes),
+    QnAModule,
+    AnswerModule
   ],
   exports: [RouterModule]
 })

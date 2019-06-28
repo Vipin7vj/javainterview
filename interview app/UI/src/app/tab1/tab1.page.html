@@ -17,15 +17,30 @@
   <ion-card>
     <ion-card-subtitle>Get Started</ion-card-subtitle>
     <ion-card-title>Welcome to Ionic</ion-card-title>
-    <ion-item button *ngFor="let topic of topics" (click)="onTopicClick(topic)" class="activated">
-      <ion-icon slot="start" color="medium" name="list-box"></ion-icon>
-      <ion-label>{{topic.name}}</ion-label>
-    </ion-item>
+
+    <ion-infinite-scroll>
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data…">
+
+        <ion-item button *ngFor="let topic of topics" (click)="onTopicClick(topic)" class="activated">
+          <ion-icon slot="start" color="medium" name="list-box"></ion-icon>
+          <ion-label>{{topic.name}}</ion-label>
+          <ion-card>
+            <p>{{topic.answer}}</p>
+          </ion-card>
+        </ion-item>
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
 
   </ion-card>
 
+  <ion-item detail>
+    <ion-label>
+      Standard Item with Detail Arrow
+    </ion-label>
+  </ion-item>
 
-  
+
   <!-- <ion-list lines="none">
     <ion-list-header>
       <ion-label>Resources</ion-label>

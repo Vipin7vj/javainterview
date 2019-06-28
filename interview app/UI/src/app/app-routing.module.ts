@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { LoginModule } from './login/login.module';
+import { IonicModule } from '@ionic/angular';
+import { AnswerModule } from './answer/answer.module';
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
-import { IonicModule } from '@ionic/angular';
+import { LoginComponent } from './login/login.component';
+import { LoginModule } from './login/login.module';
+import { QnAModule } from './qn-a/qn-a.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignUpModule } from './sign-up/sign-up.module';
-import { QnAModule } from './qn-a/qn-a.module';
-import { QnAComponent } from './qn-a/qn-a.component';
 
 const routes: Routes = [
   {
@@ -28,10 +28,10 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
- /*  {
-    path: 'qna',
-    component: QnAComponent,
-  }, */
+  /*  {
+     path: 'qna',
+     component: QnAComponent,
+   }, */
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
 ];
 
@@ -41,6 +41,7 @@ const routes: Routes = [
     IonicModule,
     LoginModule,
     QnAModule,
+    AnswerModule,
     HomeModule,
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],

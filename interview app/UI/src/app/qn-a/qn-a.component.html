@@ -1,9 +1,14 @@
-<ion-card>
-    <ion-card-subtitle>Get Started</ion-card-subtitle>
-    <ion-card-title>Welcome to Ionic</ion-card-title>
-    <ion-item button *ngFor="let data of topicData" (click)="onTopicClick(topic)" class="activated">
+<ion-content>
+  <ion-virtual-scroll [items]="topicData" approxItemHeight="320px">
+
+    <!-- <ion-card-subtitle>Get Started</ion-card-subtitle>
+      <ion-card-title>Welcome to Ionic</ion-card-title> -->
+    <!--   <ion-item button *ngFor="let data of topicData" (click)="onTopicClick(topic)" class="activated"> -->
+
+    <ion-item *virtualItem="let data" button (click)="onQuestionClick(data)" class="activated">
       <ion-icon slot="start" color="medium" name="list-box"></ion-icon>
       <ion-label>{{data.question}}</ion-label>
     </ion-item>
 
-  </ion-card>
+  </ion-virtual-scroll>
+</ion-content>

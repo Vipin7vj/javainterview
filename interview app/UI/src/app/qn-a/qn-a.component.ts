@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { QnAService } from './service/qn-a.service';
 
 @Component({
@@ -11,9 +11,11 @@ export class QnAComponent implements OnInit {
 
   public topicId;
   public topicData = {}
+  public questionData = {}
 
   constructor(private service: QnAService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.topicId = this.route.snapshot.paramMap.get('id')
@@ -26,6 +28,12 @@ export class QnAComponent implements OnInit {
       console.log(this.topicData)
     })
   }
-
-
+  onQuestionClick(questionData) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        questionData: JSON.stringify(questionData)
+      }
+    }
+    this.router.navigate(['/tabs/tab1/ans'], navigationExtras)
+  }
 }
