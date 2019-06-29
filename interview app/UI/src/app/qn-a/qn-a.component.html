@@ -1,14 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="secondary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light">
+        <ion-text color="light" class="fw700">Interview Questions</ion-text>
+      </ion-text>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="medium" (click)="notifications()">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge color="dark" slot="end">2</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="dark">
+    <ion-searchbar [(ngModel)]="searchKey"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
+        <ion-icon name="options"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <ion-virtual-scroll [items]="topicData" approxItemHeight="320px">
+  <ion-card class="bg-white">
+    <ion-virtual-scroll [items]="topicData" approxItemHeight="320px">
 
-    <!-- <ion-card-subtitle>Get Started</ion-card-subtitle>
-      <ion-card-title>Welcome to Ionic</ion-card-title> -->
-    <!--   <ion-item button *ngFor="let data of topicData" (click)="onTopicClick(topic)" class="activated"> -->
+      <ion-item lines="none" *virtualItem="let data" button (click)="onQuestionClick(data)" class="activated">
+        <ion-icon slot="start" color="medium" name="list-box"></ion-icon>
+        <ion-label text-wrap>{{data.question}}</ion-label>
+      </ion-item>
 
-    <ion-item *virtualItem="let data" button (click)="onQuestionClick(data)" class="activated">
-      <ion-icon slot="start" color="medium" name="list-box"></ion-icon>
-      <ion-label>{{data.question}}</ion-label>
-    </ion-item>
-
-  </ion-virtual-scroll>
+    </ion-virtual-scroll>
+  </ion-card>
 </ion-content>

@@ -21,6 +21,7 @@ export class QnAComponent implements OnInit {
     this.topicId = this.route.snapshot.paramMap.get('id')
     this.getTopicById();
   }
+
   getTopicById() {
     this.service.getAllTopics(this.topicId).subscribe(response => {
 
@@ -28,6 +29,7 @@ export class QnAComponent implements OnInit {
       console.log(this.topicData)
     })
   }
+
   onQuestionClick(questionData) {
     let navigationExtras: NavigationExtras = {
       state: {

@@ -13,7 +13,7 @@ import { SignUpModule } from './sign-up/sign-up.module';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/signup',
     pathMatch: 'full'
   },
   {
@@ -28,10 +28,6 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  /*  {
-     path: 'qna',
-     component: QnAComponent,
-   }, */
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
 ];
 

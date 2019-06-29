@@ -9,11 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AnswerComponent implements OnInit {
 
   data: any
-  data1: any
+  qData: any
   constructor(private route: ActivatedRoute,
     private router: Router) {
     this.data = this.router.getCurrentNavigation().extras.state.questionData
-    this.data1 = JSON.parse(this.data)
+    this.qData = JSON.parse(this.data)
     console.log(JSON.parse(this.data))
   }
 
