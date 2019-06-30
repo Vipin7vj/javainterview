@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ToastController } from '@ionic/angular';
+import { ToastController, MenuController } from '@ionic/angular';
 import { REGISTRATION_VALIDATION_MESSAGE } from './constants/registration-constants';
 import { RegistrationModel } from "./model/register-model";
 import { RegisterUserService } from "./service/registration-service";
@@ -19,12 +19,17 @@ export class SignUpComponent {
   public validationMessage: any;
   public registerationData: RegistrationModel = {};
 
-  constructor(private registerationService: RegisterUserService, private router:Router,
-    public toastController: ToastController, public formBuilder: FormBuilder) {
+  constructor(private registerationService: RegisterUserService, private router: Router,
+    public toastController: ToastController, public formBuilder: FormBuilder,
+    public menuCtrl: MenuController, ) {
     this.validators(formBuilder);
   }
 
   ngOnInit() { }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+  }
 
   onRegisterBtnClick() {
 
@@ -87,7 +92,7 @@ export class SignUpComponent {
     }
   }
 
-  goToLogin(){
+  goToLogin() {
     this.router.navigate(['/login'])
   }
 }

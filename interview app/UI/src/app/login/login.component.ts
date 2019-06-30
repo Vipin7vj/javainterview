@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ToastController } from '@ionic/angular';
+import { ToastController, MenuController } from '@ionic/angular';
 import { LOGIN_VALIDATION_MESSAGE } from './constants/login-constants';
 import { LoginUser } from './model/loginUser';
 import { AuthenticateService } from './service/authenticate.service';
@@ -13,16 +13,24 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-
   public loginForm: FormGroup;
   public validationMessage: any;
   public loginModel: LoginUser = new LoginUser();
-  constructor(public toastController: ToastController, public formBuilder: FormBuilder,
-    private loginService: AuthenticateService, private router: Router) {
+
+  constructor(public toastController: ToastController,
+    public formBuilder: FormBuilder,
+    private loginService: AuthenticateService,
+    private router: Router,
+    public menuCtrl: MenuController, ) {
     this.validators(formBuilder);
   }
 
   ngOnInit() { }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+  }
+
 
   validators(formBuilder: FormBuilder) {
     this.loginForm = formBuilder.group({

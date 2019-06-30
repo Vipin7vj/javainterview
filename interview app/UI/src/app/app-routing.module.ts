@@ -1,33 +1,17 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { AnswerModule } from './answer/answer.module';
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
-import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
 import { QnAModule } from './qn-a/qn-a.module';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignUpModule } from './sign-up/sign-up.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/signup',
-    pathMatch: 'full'
-  },
-  {
-    path: 'signup',
-    component: SignUpComponent
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
+  { path: '', loadChildren: './login/login.module#LoginModule' },
+  { path: 'signup', loadChildren: './sign-up/sign-up.module#SignUpModule' },
+  { path: 'home', component: HomeComponent, },
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
 ];
 
@@ -38,8 +22,9 @@ const routes: Routes = [
     LoginModule,
     QnAModule,
     AnswerModule,
+    RouterModule.forRoot(routes),
     HomeModule,
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    /* RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }) */
   ],
   exports: [RouterModule]
 })
