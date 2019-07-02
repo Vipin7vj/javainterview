@@ -49,8 +49,7 @@ public class QuizDao extends GenericDaoImpl<Quiz> implements IQuizDao {
 
 	@Override
 	public Quiz save(Quiz entity) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.save(entity);
 	}
 
 	@Override
