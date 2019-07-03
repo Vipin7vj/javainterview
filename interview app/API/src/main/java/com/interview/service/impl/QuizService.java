@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.interview.dao.IQuizDao;
+import com.interview.dao.impl.TopicDao;
 import com.interview.exception.RecordNotFoundException;
 import com.interview.model.Quiz;
 import com.interview.service.IQuizService;
@@ -16,6 +17,9 @@ public class QuizService implements IQuizService {
 
 	@Autowired
 	private IQuizDao dao;
+
+	@Autowired
+	private TopicDao topicDao;
 
 	@Override
 	public List<Quiz> findByTopicId(Long id) {
@@ -54,7 +58,7 @@ public class QuizService implements IQuizService {
     
     @Override
 	public Quiz save(Quiz quiz) {
-
+    	quiz.setTopic(topicDao.findById(quiz.getTopic().getId()));
 		return dao.save(quiz);
 	}
 

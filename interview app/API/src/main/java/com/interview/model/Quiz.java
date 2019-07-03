@@ -26,6 +26,7 @@ public class Quiz {
 	@ManyToOne
 	@JoinColumn(name= "topic_id", referencedColumnName="id")
 	private Topic topic;
+	
 	private String question;
 	private String optiona;
 	private String optionb;
