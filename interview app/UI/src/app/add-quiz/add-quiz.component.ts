@@ -27,7 +27,8 @@ export class AddQuizComponent implements OnInit {
   }
 
   addQuiz() {
-    this.quizModel.topicid = this.selectedTopic
+    this.quizModel.topic={}
+    this.quizModel.topic.id = this.selectedTopic
     this.service.addQuiz(this.quizModel).subscribe(response => {
       console.log(response)
     })

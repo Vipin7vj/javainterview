@@ -1,6 +1,8 @@
+import { Topic } from './topic';
+
 export class QuizModel {
     id?: number;
-    topicid?: number;
+    topic?: Topic;
     question?: string;
     optiona?: string;
     optionb?: string;
