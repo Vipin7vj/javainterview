@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-
-import { Platform, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { NavController, Platform } from '@ionic/angular';
 import { Pages } from './interfaces/pages';
+
 
 @Component({
   selector: 'app-root',
@@ -11,15 +12,16 @@ import { Pages } from './interfaces/pages';
 })
 export class AppComponent {
   public appPages: Array<Pages>;
-public username : any
+  public username: any
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
+    private router: Router,
     private statusBar: StatusBar,
     public navCtrl: NavController
   ) {
     this.initializeApp();
-    this.username=sessionStorage.getItem('username');
+    this.username = sessionStorage.getItem('username');
     this.appPages = [
       {
         title: 'Home',
@@ -61,6 +63,6 @@ public username : any
   }
 
   logout() {
-    this.navCtrl.navigateRoot('/login');
+    this.router.navigate([''])
   }
 }

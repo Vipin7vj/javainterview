@@ -53,12 +53,15 @@ export class LoginComponent implements OnInit {
     } else {
       this.loginService.authenticate(this.loginModel).subscribe(
         response => {
+
           sessionStorage.setItem('username', this.loginModel.username)
           let tokenStr = 'Bearer ' + response['token']
           console.log(tokenStr)
           sessionStorage.setItem('token', tokenStr)
           this.presentToastWithOptions("User Logged in");
+          this.loginModel = new LoginUser()
           this.router.navigate(['/tabs/tab1'])
+
         },
         error => {
           console.log(error)
