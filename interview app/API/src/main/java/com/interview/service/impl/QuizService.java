@@ -6,10 +6,8 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.interview.dao.IAngularDao;
 import com.interview.dao.IQuizDao;
 import com.interview.exception.RecordNotFoundException;
-import com.interview.model.Angular;
 import com.interview.model.Quiz;
 import com.interview.service.IQuizService;
 

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.interview.model.J2EE;
+import com.interview.model.InterviewQuestions;
 import com.interview.service.IJ2eeService;
 
 @RestController
@@ -23,30 +23,23 @@ public class J2eeController {
 	
 
 	@GetMapping("/all")
-	public List<J2EE> all(){
+	public List<InterviewQuestions> all(){
 		System.err.println("call controller");
-		List<J2EE> data= serivce.findALL();
+		List<InterviewQuestions> data= serivce.findALL();
 		
 		return data;
 	}
 	
 	@GetMapping("/topicid/{id}")
-	public List<J2EE> topic(@PathVariable ("id") Long id){
+	public List<InterviewQuestions> topic(@PathVariable ("id") Long id){
 		return serivce.findByTopicid(id);
 	}
 	
 	
 	@GetMapping("/id/{id}")
-	public J2EE byId(@PathVariable ("id") Long id){
+	public InterviewQuestions byId(@PathVariable ("id") Long id){
 		return serivce.findByID(id);
 	}
 	
 	
-	@GetMapping("/fav/{id}")
-	public List<J2EE> fav(@PathVariable ("id") Long id){
-		return serivce.findByFav(id);
-	}
-	
-
-
 }

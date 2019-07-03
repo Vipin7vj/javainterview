@@ -13,10 +13,10 @@ import java.lang.Long;
 @Repository
 public interface IQuizRepository extends JpaRepository<Quiz, Long> {
 
-	List<Quiz> findByTopicid(Long topicid);
+	List<Quiz> findByTopic_Id(Long topicid);
 
 	List<Quiz> findAll();
 	
-	@Query("select u from Quiz u where u.topicid IN :id")
+	@Query("select u from Quiz u where u.topic.id IN :id")
 	List<Quiz> findByIds(Set<Long> id);
 }

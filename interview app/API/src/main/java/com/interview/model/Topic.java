@@ -1,7 +1,10 @@
 package com.interview.model;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -13,8 +16,9 @@ import lombok.Setter;
 @Table(name="topics")
 public class Topic {
 
-	@javax.persistence.Id
-	private Long  Id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	@Column
 	private String name;

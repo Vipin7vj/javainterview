@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.interview.model.J2EE;
+import com.interview.model.InterviewQuestions;
 import com.interview.service.IJ2eeService;
 
 @RestController
@@ -41,17 +41,17 @@ public class J2eeControllerTest {
 	public void j2eeControllerTest() {
 		
 		/* dummy data inserted */
-		J2EE j2ee = new J2EE();
+		InterviewQuestions j2ee = new InterviewQuestions();
 		j2ee.setAnswer("Answer");
-		j2ee.setId(1l);
+		j2ee.setIQId(1l);
 		j2ee.setQuestion("Question");
-		j2ee.setTopicid(2l);
-		List<J2EE> data = new ArrayList();
+//		j2ee.setTopicid(2l);
+		List<InterviewQuestions> data = new ArrayList();
 		data.add(j2ee);
 
 		/* calling service and controller */
 		when(serivce.findALL()).thenReturn(data);
-		List<J2EE> allData = j2eeController.all();
+		List<InterviewQuestions> allData = j2eeController.all();
 		assertEquals(1, allData.size());
 	}
 

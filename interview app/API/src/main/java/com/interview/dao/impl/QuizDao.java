@@ -39,7 +39,7 @@ public class QuizDao extends GenericDaoImpl<Quiz> implements IQuizDao {
 	@Override
 	public List<Quiz> findByTopicId(Long id) {
 		// TODO Auto-generated method stub
-		return repo.findByTopicid(id);
+		return repo.findByTopic_Id(id);
 	}
 
 	@Override

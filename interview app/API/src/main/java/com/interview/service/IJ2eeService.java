@@ -4,13 +4,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.interview.model.J2EE;
+import com.interview.model.InterviewQuestions;
 
 @Service
 public interface IJ2eeService {
-	List<J2EE> findByTopicid(Long id);
-	J2EE findByQuestion(String que);
-	List<J2EE> findByFav(Long fav);
-	J2EE findByID(long id);
-	List<J2EE> findALL();
+	List<InterviewQuestions> findByTopicid(Long id);
+	InterviewQuestions findByQuestion(String que);
+	InterviewQuestions findByID(long id);
+	List<InterviewQuestions> findALL();
 }

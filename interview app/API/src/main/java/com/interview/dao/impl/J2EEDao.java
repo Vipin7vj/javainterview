@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 import com.interview.dao.IJ2EEDao;
 import com.interview.dao.repo.IJ2EERepository;
 import com.interview.generic.impl.GenericDaoImpl;
-import com.interview.model.J2EE;
+import com.interview.model.InterviewQuestions;
 
 @Repository
-public class J2EEDao extends GenericDaoImpl<J2EE> implements IJ2EEDao {
+public class J2EEDao extends GenericDaoImpl<InterviewQuestions> implements IJ2EEDao {
 
 	@Autowired
 	private IJ2EERepository repo;
@@ -29,39 +29,33 @@ public class J2EEDao extends GenericDaoImpl<J2EE> implements IJ2EEDao {
 	}
 
 	@Override
-	public J2EE findById(Long id) {
+	public InterviewQuestions findById(Long id) {
 		// TODO Auto-generated method stub
 		return repo.findById(id).orElse(null);
 	}
 
 	@Override
-	public J2EE save(J2EE entity) {
+	public InterviewQuestions save(InterviewQuestions entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<J2EE> findAll() {
+	public List<InterviewQuestions> findAll() {
 		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
 
 	@Override
-	public List<J2EE> findByTopicid(Long id) {
+	public List<InterviewQuestions> findByTopicid(Long id) {
 		// TODO Auto-generated method stub
-		return repo.findByTopicid(id);
+		return repo.findByTopic_Id(id);
 	}
 
 	@Override
-	public J2EE findByQuestion(String que) {
+	public InterviewQuestions findByQuestion(String que) {
 		// TODO Auto-generated method stub
 		return repo.findByQuestion(que);
-	}
-
-	@Override
-	public List<J2EE> findByFav(Long fav) {
-		// TODO Auto-generated method stub
-		return repo.findByFav(fav);
 	}
 
 

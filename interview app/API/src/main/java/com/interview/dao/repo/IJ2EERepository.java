@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.interview.model.J2EE;
+import com.interview.model.InterviewQuestions;
 
 @Repository
-public interface IJ2EERepository extends JpaRepository<J2EE, Long> {
+public interface IJ2EERepository extends JpaRepository<InterviewQuestions, Long> {
 
-	List<J2EE> findByTopicid(Long id);
-	J2EE findByQuestion(String que);
-	List<J2EE> findByFav(Long fav);
-	List<J2EE> findAll();
+	List<InterviewQuestions> findByTopicId(Long id);
+	InterviewQuestions findByQuestion(String que);
+	List<InterviewQuestions> findAll();
+	List<InterviewQuestions> findByTopic_Id(Long id);
 }
