@@ -1,6 +1,7 @@
 package com.interview.dao;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,4 +16,5 @@ public interface IQuizDao extends IGenericDao<Quiz> {
 	List<Quiz> findByTopicId(Long id);
 
 	List<Quiz> findAll();
+	List<Quiz> findByIds(Set<Long> id);
 }

@@ -1,6 +1,7 @@
 package com.interview.service.impl;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,16 @@ public class QuizService implements IQuizService {
 
 		return quiz;
 
+	}
+
+	@Override
+	public List<Quiz> findByTopicIds(Set<Long> id) {
+		// TODO Auto-generated method stub
+		List<Quiz> quiz = dao.findByIds(id);
+		if (quiz.isEmpty())
+			throw new RecordNotFoundException("No Record Found");
+
+		return quiz;
 	}
 
 }

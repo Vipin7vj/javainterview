@@ -1,6 +1,7 @@
 package com.interview.dao.impl;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -57,6 +58,12 @@ public class QuizDao extends GenericDaoImpl<Quiz> implements IQuizDao {
 	public Quiz findById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Quiz> findByIds(Set<Long> id) {
+		// TODO Auto-generated method stub
+		return repo.findByIds(id);
 	}
 
 }
