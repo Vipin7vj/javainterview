@@ -36,7 +36,7 @@ public class QuizController {
 	@GetMapping("/get")
 	public List<Quiz> getByIds(@RequestParam("ids") Set<Long> id) {
 		System.err.println(id);
-		return service.findByTopicIds(id);
+		return service.findByTopicIds(id);  //sa
 
 	}
 	
