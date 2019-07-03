@@ -15,4 +15,6 @@ public interface IQuizService {
 	List<Quiz> findAll();
 
 	Quiz findById(Long id);
+	
+	Quiz save(Quiz quiz);
 }

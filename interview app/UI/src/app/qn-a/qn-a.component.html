@@ -15,25 +15,16 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar color="dark">
-    <ion-searchbar [(ngModel)]="searchKey"></ion-searchbar>
-    <ion-buttons slot="end">
-      <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
-        <ion-icon name="options"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card class="bg-white">
-    <ion-virtual-scroll [items]="topicData" approxItemHeight="320px">
-
-      <ion-item lines="none" *virtualItem="let data" button (click)="onQuestionClick(data)" class="activated">
+    <ion-searchbar [formControl]="searchControl" placeholder="Search Questions"></ion-searchbar>
+    <ion-list>
+      <ion-item lines="none" *ngFor="let data of filteredQ" button (click)="onQuestionClick(data)" class="activated">
         <ion-icon slot="start" color="medium" name="list-box"></ion-icon>
         <ion-label text-wrap>{{data.question}}</ion-label>
       </ion-item>
-
-    </ion-virtual-scroll>
+    </ion-list>
   </ion-card>
 </ion-content>

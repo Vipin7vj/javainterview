@@ -1,3 +1,28 @@
-<p>
-  add-quiz works!
-</p>
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>Please select for Quiz</ion-list-header>
+
+    <ion-item>
+      <ion-label>Topic</ion-label>
+      <ion-select [(ngModel)]="selectedTopic">
+        <ion-item *ngFor="let top of topics">
+          <ion-select-option value="{{top.id}}">{{top.name}}</ion-select-option>
+        </ion-item>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- Input with placeholder -->
+  <ion-input [(ngModel)]="quizModel.question" placeholder="Enter Question"></ion-input>
+  <ion-input [(ngModel)]="quizModel.optiona" placeholder="Enter optiona"></ion-input>
+  <ion-input [(ngModel)]="quizModel.optionb" placeholder="Enter optionb"></ion-input>
+  <ion-input [(ngModel)]="quizModel.optionc" placeholder="Enter optionc"></ion-input>
+  <ion-input [(ngModel)]="quizModel.optiond" placeholder="Enter optiond"></ion-input>
+  <ion-input [(ngModel)]="quizModel.answer" placeholder="Enter answer"></ion-input>
+
+
+  <ion-button (click)="addQuiz()" color="primary">Submit</ion-button>
+</ion-content>
+<p>{{selectedTopic}}</p>

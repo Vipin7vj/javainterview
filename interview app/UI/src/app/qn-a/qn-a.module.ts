@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { QnAService } from './service/qn-a.service';
 import { QnAComponent } from './qn-a.component';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
     IonicModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([{ path: '', component: QnAComponent }])
   ],
   providers: [QnAService]

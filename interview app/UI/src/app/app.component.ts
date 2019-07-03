@@ -39,6 +39,12 @@ public username : any
         url: '/settings',
         direct: 'forward',
         icon: 'cog'
+      },
+      {
+        title: 'Add Quiz',
+        url: '/add-quiz',
+        direct: 'forward',
+        icon: 'umbrella'
       }
     ];
   }

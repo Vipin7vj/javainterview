@@ -7,12 +7,14 @@ import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { QnAModule } from './qn-a/qn-a.module';
 import { SignUpModule } from './sign-up/sign-up.module';
+import { AddQuizModule } from './add-quiz/add-quiz.module';
 
 const routes: Routes = [
   { path: '', loadChildren: './login/login.module#LoginModule' },
   { path: 'signup', loadChildren: './sign-up/sign-up.module#SignUpModule' },
   { path: 'home', component: HomeComponent, },
-  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: 'add-quiz', loadChildren: './add-quiz/add-quiz.module#AddQuizModule' }
 ];
 
 @NgModule({
@@ -20,6 +22,7 @@ const routes: Routes = [
     SignUpModule,
     IonicModule,
     LoginModule,
+    AddQuizModule,
     QnAModule,
     AnswerModule,
     RouterModule.forRoot(routes),

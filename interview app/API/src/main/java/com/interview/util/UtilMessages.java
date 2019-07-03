@@ -35,4 +35,5 @@ public class UtilMessages {
 	public static final String FAILED = "failed";
 	public static final String DEVICE_CODE_ALREADY_USED = "Device Code Already Used.";
 	public static final String DEVICE_DETAIL_UPDATE_SUCCESS = "Device Details Updated Successfully.";
+	public static final String QUIZ_INSERTION  = "Quiz Insertion failed";
 }

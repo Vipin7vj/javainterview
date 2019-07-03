@@ -53,6 +53,12 @@ public class QuizService implements IQuizService {
 		return quiz;
 
 	}
+    
+    @Override
+	public Quiz save(Quiz quiz) {
+
+		return dao.save(quiz);
+	}
 
 	@Override
 	public List<Quiz> findByTopicIds(Set<Long> id) {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { QnAService } from './service/qn-a.service';
+import { FormControl } from "@angular/forms";
+import { debounceTime } from "rxjs/operators";
 
 @Component({
   selector: 'app-qn-a',
@@ -10,24 +12,46 @@ import { QnAService } from './service/qn-a.service';
 export class QnAComponent implements OnInit {
 
   public topicId;
-  public topicData = {}
+  public topicData: any = []
   public questionData = {}
+  public searchControl: FormControl;
+  public filteredQ: any = [];
 
   constructor(private service: QnAService,
     private route: ActivatedRoute,
-    private router: Router) { }
+
+    private router: Router) {
+    this.searchControl = new FormControl();
+  }
 
   ngOnInit() {
     this.topicId = this.route.snapshot.paramMap.get('id')
     this.getTopicById();
+    this.searchFilter()
   }
 
   getTopicById() {
     this.service.getAllTopics(this.topicId).subscribe(response => {
 
       this.topicData = response
-      console.log(this.topicData)
+      Object.assign(this.filteredQ, this.topicData);
     })
+  }
+
+  searchFilter() {
+    this.setFilteredItems("");
+
+    this.searchControl.valueChanges
+      .pipe(debounceTime(700))
+      .subscribe(search => {
+        this.setFilteredItems(search);
+      });
+  }
+
+  setFilteredItems(searchTerm) {
+    this.filteredQ = this.topicData.filter(item => {
+      return item.question.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+    });
   }
 
   onQuestionClick(questionData) {

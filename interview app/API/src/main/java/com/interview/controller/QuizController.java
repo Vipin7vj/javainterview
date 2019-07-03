@@ -3,6 +3,9 @@ package com.interview.controller;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.interview.model.Quiz;
 import com.interview.service.IQuizService;
@@ -18,6 +23,8 @@ import com.interview.service.IQuizService;
 @CrossOrigin("*")
 @RequestMapping("quiz")
 public class QuizController {
+
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private IQuizService service;
@@ -32,13 +39,19 @@ public class QuizController {
 		return service.findByTopicId(id);
 
 	}
-	
+
+//	@PostMapping("/addQuiz")
+	@RequestMapping(value = "/addQuiz", method = RequestMethod.POST, produces = "application/json")
+	public Quiz addQuiz(@RequestBody Quiz quiz, BindingResult bindingResult) {
+		LOGGER.info("inside @class QuizController @method signup entry..");
+		return service.save(quiz);
+	}
+
 	@GetMapping("/get")
 	public List<Quiz> getByIds(@RequestParam("ids") Set<Long> id) {
 		System.err.println(id);
-		return service.findByTopicIds(id);  //sa
+		return service.findByTopicIds(id); // sa
 
 	}
-	
 
 }
