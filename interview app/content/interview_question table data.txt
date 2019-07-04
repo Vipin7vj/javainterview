@@ -1,0 +1,3730 @@
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          1,
+                          1,
+                          'What are Servlets?',
+                          'Java Servlets are programs that run on a Web or Application server and act as a middle layer between a request coming from a Web browser or other HTTP client and databases or applications on the HTTP server.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          2,
+                          1,
+                          'What are the advantages of servlets over CGI?',
+                          'Servlets offer several advantages in comparison with the CGI.<br/>1) Performance is significantly better.<br/>2) Servlets execute within the address space of a Web server. It is not necessary to create a separate process to handle each client request.<br/>3) Servlets are platform-independent because they are written in Java.<br/>4) Java security manager on the server enforces a set of restrictions to protect the resources on a server machine. So servlets are trusted.<br/>5) The full functionality of the Java class libraries is available to a servlet. It can communicate with applets, databases, or other software via the sockets and RMI mechanisms that you have seen already.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          3,
+                          1,
+                          'How many objects of a servlet is created?',
+                          'Only one object at the time of first request by servlet or web container.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          4,
+                          1,
+                          'What is the life-cycle of a servlet?',
+                          '1) Servlet is loaded<br/>2) servlet is instantiated<br/>3) servlet is initialized<br/>4) service the request<br/>5) servlet is destroyed');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          5,
+                          1,
+                          'What are the life-cycle methods for a servlet?',
+                          '1) public void init(ServletConfig config)<br/>It is invoked only once when first request comes for the servlet. It is used to initialize the servlet.<br/><br/>2) public void service(ServletRequest request,ServletResponse)throws ServletException,IOException<br/>It is invoked at each request.The service() method is used to service the request.<br/><br/>3) public void destroy()<br/>It is invoked only once when servlet is unloaded.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          6,
+                          1,
+                          'Who is responsible to create the object of servlet?',
+                          'The web container or servlet container.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          7,
+                          1,
+                          'When servlet object is created?',
+                          'At the time of first request.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          8,
+                          1,
+                          'What is difference between Get and Post method?',
+                          '1) GET Limited amount of data can be sent because data is sent in header where POST large amount of data can be sent because data is sent in body.<br/>2) GET Not Secured because data is exposed in URL bar where POST is secured because data is not exposed in URL bar.<br/>3) GET Can be bookmarked where cannot be bookmarked.<br/>4) GET Idempotent where POST is Non-Idempotent.<br/>5) GET It is more efficient and used than Post where POST It is less efficient and used.<br/>6) GET is the default HTTP method whereas we need to specify method as POST to send request with POST method.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          9,
+                          1,
+                          'What is difference between PrintWriter and ServletOutputStream?',
+                          'PrintWriter is a character-stream class where as ServletOutputStream is a byte-stream class. The PrintWriter class can be used to write only character-based information whereas ServletOutputStream class can be used to write primitive values as well as character-based information.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          10,
+                          1,
+                          'What is difference between GenericServlet and HttpServlet?',
+                          'The GenericServlet is protocol independent whereas HttpServlet is HTTP protocol specific. HttpServlet provides additional functionalities such as state management etc.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          11,
+                          1,
+                          'What is servlet collaboration?',
+                          'When one servlet communicates to another servlet, it is known as servlet collaboration. There are many ways of servlet collaboration:<br/><br/>RequestDispacher interface<br/>sendRedirect() method etc.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          12,
+                          1,
+                          'What is the purpose of RequestDispatcher Interface?',
+                          'The RequestDispacher interface provides the facility of dispatching the request to another resource it may be html, servlet or jsp. This interceptor can also be used to include the content of antoher resource.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          13,
+                          1,
+                          'Can you call a jsp from the servlet?',
+                          'Yes, one of the way is RequestDispatcher interface for example:<br/><br/>RequestDispatcher rd=request.getRequestDispatcher("/login.jsp");<br/>rd.forward(request,response);');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          14,
+                          1,
+                          'How to read form data in servlet?',
+                          'Servlets handles form data parsing automatically using the following methods depending on the situation:<br/>1) getParameter(): You call request.getParameter() method to get the value of a form parameter.<br/>2) getParameterValues(): Call this method if the parameter appears more than once and returns multiple values, for example checkbox.<br/>3) getParameterNames(): Call this method if you want a complete list of all parameters in the current request.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          15,
+                          1,
+                          'What is HTTPServletRequest class?',
+                          'When a browser requests for a web page, it sends lot of information to the web server which can not be read directly because this information travel as a part of header of HTTP request. HTTPServletRequest represents this HTTP Request.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          16,
+                          1,
+                          'What is HTTPServletResponse class?',
+                          'when a Web server responds to a HTTP request to the browser, the response typically consists of a status line, some response headers, a blank line, and the document. HTTPServletResponse represents this HTTP Response.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          17,
+                          1,
+                          'How to send an authentication error from a servlet?',
+                          'We can use setStatus(statuscode) method of HttpServletResponse to send an authentication error.<br/><br/>// Set error code and reason.<br/>response.sendError(407, "Need authentication!!!" );');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          18,
+                          1,
+                          'Difference between forward() method and sendRedirect() method ?',
+                          'forward(): sends the same request to another resource.<br/>sendRedirect(): method sends new request always because it uses the URL bar of the browser.<br/><br/>forward() method works at server side.<br/>sendRedirect() method works at client side.<br/><br/>forward() method works within the server only. <br/>sendRedirect() method works within and outside the server.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          19,
+                          1,
+                          'What is ServletConfig object?',
+                          'An object of ServletConfig is created by the web container for each servlet. This object can be used to get configuration information from web.xml file.<br/>If the configuration information is modified from the web.xml file, we don''t need to change the servlet. So it is easier to manage the web application if any specific content is modified from time to time.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          20,
+                          1,
+                          'What is ServletContext object?',
+                          'An object of ServletContext is created by the web container at time of deploying the project. This object can be used to get configuration information from web.xml file. There is only one ServletContext object per web application.<br/>If any information is shared to many servlet, it is better to provide it from the web.xml file using the <context-param> element.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          21,
+                          1,
+                          'What is difference between ServletConfig and ServletContext?',
+                          'The container creates object of ServletConfig for each servlet whereas object of ServletContext is created for each web application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          22,
+                          1,
+                          'What is Session Tracking?',
+                          'Session simply means a particular interval of time.<br/><br/>Session Tracking is a way to maintain state of an user.Http protocol is a stateless protocol.Each time user requests to the server, server treats the request as the new request.So we need to maintain the state of an user to recognize to particular user.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          23,
+                          1,
+                          'What are Cookies?',
+                          'A cookie is a small piece of information that is persisted between the multiple client requests. A cookie has a name, a single value, and optional attributes such as a comment, path and domain qualifiers, a maximum age, and a version number.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          24,
+                          1,
+                          'How to create a cookie using servlet?',
+                          'Setting cookies with servlet involves three steps:<br/>(1) Creating a Cookie object: You call the Cookie constructor with a cookie name and a cookie value, both of which are strings.<br/><br/>Cookie cookie = new Cookie("key","value");<br/>Keep in mind, neither the name nor the value should contain white space or any of the following characters: [ ] ( ) = , " / ? @ : ;<br/><br/>(2) Setting the maximum age: You use setMaxAge to specify how long (in seconds) the cookie should be valid. Following would set up a cookie for 24 hours.<br/><br/>cookie.setMaxAge(60*60*24); <br/>(3) Sending the Cookie into the HTTP response headers: You use response.addCookie to add cookies in the HTTP response header as follows:<br/><br/>response.addCookie(cookie);');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          25,
+                          1,
+                          'How to read a cookie using servlet?',
+                          'To read cookies, you need to create an array of javax.servlet.http.Cookie objects by calling the getCookies( ) method of HttpServletRequest. Then cycle through the array, and use getName() and getValue() methods to access each cookie and associated value.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          26,
+                          1,
+                          'How to delete a cookie using servlet?',
+                          'To delete cookies is very simple. If you want to delete a cookie then you simply need to follow up following three steps:<br/>1) Read an already exsiting cookie and store it in Cookie object.<br/>2) Set cookie age as zero using setMaxAge() method to delete an existing cookie.<br/>3) Add this cookie back into response header.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          27,
+                          1,
+                          'What is URL rewriting?',
+                          'You can append some extra data on the end of each URL that identifies the session, and the server can associate that session identifier with data it has stored about that session. For example, with http://aqubeinfotech.com/file.htm;sessionid=12345, the session identifier is attached as sessionid=12345 which can be accessed at the web server to identify the client.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          28,
+                          1,
+                          'How to create a session in servlet?',
+                          'You would get HttpSession object by calling the public method getSession() of HttpServletRequest, as below:<br/><br/>// Create a session object if it is already not  created.<br/>HttpSession session = request.getSession();');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          29,
+                          1,
+                          'How to delete a session in servlet?',
+                          'When you are done with a user''s session data, you have several options:<br/>1) <b>Remove a particular attribute:</b> You can call public void removeAttribute(String name) method to delete the value associated with a particular key.<br/>2) <b>Delete the whole session:</b> You can call public void invalidate() method to discard an entire session. Setting Session timeout: You can call public void setMaxInactiveInterval(int interval) method to set the timeout for a session individually.<br/>3) <b>Log the user out:</b> The servers that support servlets 2.4, you can call logout to log the client out of the Web server and invalidate all sessions belonging to all the users.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          30,
+                          1,
+                          'How to update an attribute in session in servlet?',
+                          'setAttribute(String name, Object value) of HTTPSession object binds an object to this session, using the name specified and can be used to update an attribute in session.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          31,
+                          1,
+                          'How to set session timeout in servlet?',
+                          'setMaxInactiveInterval(int interval) of HTTPSession object specifies the time, in seconds, between client requests before the servlet container will invalidate this session.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          32,
+                          1,
+                          'What is difference between Cookies and HttpSession?',
+                          'Cookie works at client side whereas HttpSession works at server side.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          33,
+                          1,
+                          'How to set auto page refresh in servlet?',
+                          'The simplest way of refreshing a web page is using method setIntHeader() of response object.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          34,
+                          1,
+                          'What is filter?',
+                          'A filter is an object that is invoked either at the preprocessing or postprocessing of a request. It is pluggable.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          35,
+                          1,
+                          'How to do servlet filter mapping?',
+                          'Filters are deployed in the deployment descriptor file web.xml and then map to either servlet names or URL patterns in your application''s deployment descriptor.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          36,
+                          1,
+                          'How can we perform any action at the time of deploying the project?',
+                          'By the help of ServletContextListener interface.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          37,
+                          1,
+                          'What is the disadvantage of cookies?',
+                          'It will not work if cookie is disabled from the browser.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          38,
+                          1,
+                          'How can we upload the file to the server using servlet?',
+                          'One of the way is by MultipartRequest class provided by third party.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          39,
+                          1,
+                          'What is load-on-startup in servlet?',
+                          'The load-on-startup element of servlet in web.xml is used to load the servlet at the time of deploying the project or server start. So it saves time for the response of first request.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          40,
+                          1,
+                          'What if we pass negative value in load-on-startup?',
+                          'It will not affect the container, now servlet will be loaded at first request.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          41,
+                          1,
+                          'What is war file?',
+                          'A war (web archive) file specifies the web elements. A servlet or jsp project can be converted into a war file. Moving one servlet project from one place to another will be fast as it is combined into a single file.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          42,
+                          1,
+                          'How to create war file?',
+                          'The war file can be created using jar tool found in jdk/bin directory. If you are using Eclipse or Netbeans IDE, you can export your project as a war file.<br/><br/>To create war file from console, you can write following code.<br/><br/>jar -cvf abc.war *  <br/><br/>Now all the files of current directory will be converted into abc.war file.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          43,
+                          1,
+                          'What are the annotations used in Servlet-3?',
+                          'There are mainly 3 annotations used for the servlet.<br/>1) @WebServlet : for servlet class.<br/>2) @WebListener : for listener class.<br/>3) @WebFilter : for filter class.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          44,
+                          1,
+                          'Which event is fired at the time of project deployment and undeployment?',
+                          'ServletContextEvent.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          45,
+                          1,
+                          'Which event is fired at the time of session creation and destroy?',
+                          'HttpSessionEvent.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          46,
+                          1,
+                          'Which event is fired at the time of setting, getting or removing attribute from application scope?',
+                          'ServletContextAttributeEvent.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          47,
+                          1,
+                          'What is the use of welcome-file-list?',
+                          'It is used to specify the welcome file for the project.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          48,
+                          1,
+                          'What is the use of attribute in servlets?',
+                          'Attribute is a map object that can be used to set, get or remove in request, session or application scope. It is mainly used to share information between one servlet to another.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          49,
+                          1,
+                          'What is internalization?',
+                          'This means enabling a web site to provide different versions of content translated into the visitor''s language or nationality.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          50,
+                          1,
+                          'What is localization?',
+                          'This means adding resources to a web site to adapt it to a particular geographical or cultural region for example Hindi translation to a web site.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          51,
+                          1,
+                          'What is locale?',
+                          'This is a particular cultural or geographical region. It is usually referred to as a language symbol followed by a country symbol which is separated by an underscore. For example "en_US" represents english locale for US.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          52,
+                          2,
+                          'What is JSP?',
+                          'Java Server Pages technology (JSP) is used to create dynamic web page. It is an extension to the servlet technology. A JSP page is internally converted into servlet.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          53,
+                          2,
+                          'What are the life-cycle methods for a jsp?',
+                          '<b>public void jspInit():</b> It is invoked only once, same as init method of servlet.<br/><b>public void _jspService(ServletRequest request,ServletResponse)throws ServletException,IOException:</b> It is invoked at each request, same as service() method of servlet.<br/><b>public void jspDestroy():</b> It is invoked only once, same as destroy() method of servlet.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          54,
+                          2,
+                          'What is difference between hide comment and output comment?',
+                          'The jsp comment is called hide comment whereas html comment is called output comment. If user views the source of the page, the jsp comment will not be shown whereas html comment will be shown.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          55,
+                          2,
+                          'What are the JSP implicit objects?',
+                          'JSP provides 9 implicit objects by default. They are as follows:<br/>1) out: JspWriter<br/>2) request: HttpServletRequest<br/>3) response: HttpServletResponse<br/>4) config: ServletConfig<br/>5) session: HttpSession<br/>6) application: ServletContext<br/>7) pageContext: PageContext<br/>8) page: Object<br/>9) exception: Throwable');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          56,
+                          2,
+                          'What is difference between include directive and include action?',
+                          'The include directive includes the content at page translation time.<br/>The include action includes the content at request time.<br/><br/>The include directive includes the original content of the page so page size increases at runtime.<br/>The include action doesn''t include the original content rather invokes the include() method of Vendor provided class.<br/><br/>It''s better for static pages.<br/>It''s better for dynamic pages.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          57,
+                          2,
+                          'Is JSP technology extensible?',
+                          'Yes. JSP technology is extensible through the development of custom actions, or tags, which are encapsulated in tag libraries.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          58,
+                          2,
+                          'How can I implement a thread-safe JSP page? What are the advantages and Disadvantages of using it?',
+                          'You can make your JSPs thread-safe by having them implement the SingleThreadModel interface. This is done by adding the directive &lt;%@ page isThreadSafe="false" %&gt; within your JSP page.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          59,
+                          2,
+                          'How can I prevent the output of my JSP or Servlet pages from being cached by the browser?<br/>(OR) How to disable caching on back button of the browser?',
+                          '&lt;% <br/>response.setHeader("Cache-Control","no-store");   <br/>response.setHeader("Pragma","no-cache");   <br/>response.setHeader ("Expires", "0"); <br/>//prevents caching at the proxy server  <br/>%&gt;');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          60,
+                          2,
+                          'How can we handle the exceptions in JSP ?',
+                          'There are two ways to perform exception handling, one is by the errorPage element of page directive, and second is by the error-page element of web.xml file.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          61,
+                          2,
+                          'What are the two ways to include the result of another page. ?',
+                          'There are two ways to include the result of another page:<br/>By include directive<br/>By include action<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          62,
+                          2,
+                          'How can we forward the request from jsp page to the servlet ?',
+                          'Yes ofcourse! With the help of forward action tag, but we need to give the url-pattern of the servlet.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          63,
+                          2,
+                          'Can we use the exception implicit object in any jsp page ?',
+                          'No. The exception implicit object can only be used in the error page which defines it with the isErrorPage attribute of page directive.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          64,
+                          2,
+                          'How is JSP used in the MVC model?',
+                          'JSP is usually used for presentation in the MVC pattern (Model View Controller ) i.e. it plays the role of the view. The controller deals with calling the model and the business classes which in turn get the data, this data is then presented to the JSP for rendering on to the client.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          65,
+                          2,
+                          'What are context initialization parameters?',
+                          'Context initialization parameters are specified by the <context-param> in the web.xml file, these are initialization parameter for the whole application and not specific to any servlet or JSP.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          66,
+                          2,
+                          'What are the different scope values for the <jsp:useBean> tag?',
+                          'There are 4 values:<br/>1) page<br/>2) request<br/>3) session<br/>4) application');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          67,
+                          2,
+                          'What is the difference between ServletContext and PageContext?',
+                          'ServletContext gives the information about the container whereas PageContext gives the information about the Request.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          68,
+                          2,
+                          'What is the difference in using request.getRequestDispatcher() and context.getRequestDispatcher()?',
+                          'request.getRequestDispatcher(path) is used in order to create it we need to give the relative path of the resource whereas context.getRequestDispatcher(path) in order to create it we need to give the absolute path of the resource.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          69,
+                          2,
+                          'What is EL in JSP?',
+                          'The Expression Language(EL) is used in JSP to simplify the accessibility of objects. It provides many objects that can be used directly like param, requestScope, sessionScope, applicationScope, request, session etc.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          70,
+                          2,
+                          'What is basic differences between the JSP custom tags and java beans?',
+                          '1) Custom tags can manipulate JSP content whereas beans cannot.<br/>2) Complex operations can be reduced to a significantly simpler form with custom tags than with beans.<br/>3) Custom tags require quite a bit more work to set up than do beans.<br/>4) Custom tags are available only in JSP 1.1 and later, but beans can be used in all JSP 1.x versions.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          71,
+                          2,
+                          'Can an interface be implemented in the jsp file ?',
+                          'No.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          72,
+                          2,
+                          'What is JSTL?',
+                          'JSP Standard Tag Library is library of predefined tags that ease the development of JSP.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          73,
+                          2,
+                          'How many tags are provided in JSTL?',
+                          'There are 5 type of JSTL tags.<br/>1) core tags<br/>2) sql tags<br/>3) xml tags<br/>4) internationalization tags<br/>5) functions tags');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          74,
+                          2,
+                          'Which directive is used in jsp custom tag?',
+                          'The jsp taglib directive.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          75,
+                          2,
+                          'What are the 3 tags used in JSP bean development?',
+                          'jsp:useBean<br/>jsp:setProperty<br/>jsp:getProperty');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          76,
+                          2,
+                          'How to disable session in JSP?',
+                          '1. &lt;%@ page session="false" %&gt;');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          77,
+                          2,
+                          'How can Automatic creation of session be prevented in a JSP page?',
+                          'JSP page automatically create sessions for requests. By typing the following, it can be avoided.<br/>&lt;%@ page session="false"  %&gt;');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          78,
+                          2,
+                          'How can you avoid scriptlet code in JSP?',
+                          'JavaBeans or Custom Tags can be used instead of scriptlet code.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          79,
+                          2,
+                          'Explain static method.',
+                          'A static method is of the class and not the object of a class. It can be invoked without instance of a class. Static members can also access the static data and change its value.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          80,
+                          2,
+                          'How to disable scripting?',
+                          'Scripting can be easily disabled by setting scripting-invalid element of the deployment descriptor to true. It is a sub-element of property group. Its can be false as well.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          81,
+                          2,
+                          'How is JSP better than Servlet technology?',
+                          'JSP is a technology on the server''s side to make content generation simple. They are document centric, whereas servlets are programs. A Java server page can contain fragments of Java program, which execute and instantiate Java classes. However, they occur inside HTML template file. It provides the framework for development of a Web Application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          82,
+                          2,
+                          'Show the 2 types of comments in JSP.',
+                          '&lt;% - JSP Comment - %&gt;<br/>&lt;!- HTML comment -&gt;');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          83,
+                          3,
+                          'What is JDBC?',
+                          'JDBC is a Java API that is used to connect and execute query to the database. JDBC API uses jdbc drivers to connects to the database.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          84,
+                          3,
+                          'What is JDBC Driver?',
+                          'JDBC Driver is a software component that enables java application to interact with the database.There are 4 types of JDBC drivers:<br/>1) JDBC-ODBC bridge driver<br/>2) Native-API driver (partially java driver)<br/>3) Network Protocol driver (fully java driver)<br/>4) Thin driver (fully java driver)');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          85,
+                          3,
+                          'What are the steps to connect to the database in java?',
+                          '1) Registering the driver class<br/>2) Creating connection<br/>3) Creating statement<br/>4) Executing queries<br/>5) Closing connection<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          86,
+                          3,
+                          'What are the JDBC API components?',
+                          'The java.sql package contains interfaces and classes for JDBC API.<br/>Interfaces:<br/><br/>1) Connection<br/>2) Statement<br/>3) PreparedStatement<br/>4) ResultSet<br/>5) ResultSetMetaData<br/>6) DatabaseMetaData<br/>7) CallableStatement etc.<br/><br/>Classes:<br/><br/>1) DriverManager<br/>2) Blob<br/>3) Clob<br/>4) Types<br/>5) SQLException etc.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          87,
+                          3,
+                          'What are the JDBC statements?',
+                          'There are 3 JDBC statements.<br/>1) Statement<br/>2) PreparedStatement<br/>3) CallableStatement');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          88,
+                          3,
+                          'What is Statement?',
+                          'Statement acts like a vehicle through which SQL commands can be sent. Through the connection object we create statement kind of objects.Through the connection object we create statement kind of objects.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          89,
+                          3,
+                          'What is PreparedStatement?',
+                          'A prepared statement is an SQL statement that is precompiled by the database. Through precompilation, prepared statements improve the performance of SQL commands that are executed multiple times (given that the database supports prepared statements). Once compiled, prepared statements can be customized prior to each execution by altering predefined SQL parameters.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          90,
+                          3,
+                          'What are callable statements ?',
+                          'Callable statements are used from JDBC application to invoke stored procedures and functions.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          91,
+                          3,
+                          'What is the difference between Statement and PreparedStatement interface?',
+                          'In case of Statement, query is complied each time whereas in case of PreparedStatement, query is complied only once. So performance of PreparedStatement is better than Statement.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          92,
+                          3,
+                          'How can we execute stored procedures and functions?',
+                          'By using Callable statement interface, we can execute procedures and functions.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          93,
+                          3,
+                          'What is the role of JDBC DriverManager class?',
+                          'The DriverManager class manages the registered drivers. It can be used to register and unregister drivers. It provides factory method that returns the instance of Connection.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          94,
+                          3,
+                          'What does the JDBC Connection interface?',
+                          'The Connection interface maintains a session with the database. It can be used for transaction management. It provides factory methods that returns the instance of Statement, PreparedStatement, CallableStatement and DatabaseMetaData.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          95,
+                          3,
+                          'What does the JDBC ResultSet interface?',
+                          'The ResultSet object represents a row of a table. It can be used to change the cursor pointer and get the information from the database.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          96,
+                          3,
+                          'What does the JDBC ResultSetMetaData interface?',
+                          'The ResultSetMetaData interface returns the information of table such as total number of columns, column name, column type etc.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          97,
+                          3,
+                          'What does the JDBC DatabaseMetaData interface?',
+                          'The DatabaseMetaData interface returns the information of the database such as username, driver name, driver version, number of tables, number of views etc.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          98,
+                          3,
+                          'Which interface is responsible for transaction management in JDBC?',
+                          'The Connection interface provides methods for transaction management such as commit(), rollback() etc.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          99,
+                          3,
+                          'What is batch processing and how to perform batch processing in JDBC?',
+                          'By using batch processing technique in JDBC, we can execute multiple queries. It makes the performance fast.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          100,
+                          3,
+                          'How can we store and retrieve images from the database?',
+                          'By using PreparedStatement interface, we can store and retrieve images.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          101,
+                          3,
+                          'What is Connection Pooling?',
+                          'Connection Pooling is a technique used for reuse of physical connections and reduced overhead for your application. Connection pooling functionality minimizes expensive operations in the creation and closing of sessions.Database vendor''s help multiple clients to share a cached set of connection objects that provides access to a database. Clients need not create a new connection everytime to interact with the database.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          102,
+                          3,
+                          'How do you implement connection pooling?',
+                          'If you use an application server like WebLogic, WebSphere, jBoss, Tomcat. , then your application server provides the facilities to configure for connection pooling. If you are not using an application server then components like Apache Commons DBCP Component can be used.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          103,
+                          3,
+                          'What does the Class.forName("MyClass") do?',
+                          'Class.forName("MyClass")<br/>1) Loads the class MyClass.<br/>2) Execute any static block code of MyClass.<br/>3) Returns an instance of MyClass.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          104,
+                          3,
+                          'What is a RowSet?',
+                          'A JDBC RowSet object holds tabular data in a way that makes it more flexible and easier to use than a result set. A RowSet objects are JavaBeans components.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          105,
+                          3,
+                          'What are different types of RowSet objects?',
+                          'There are two types of RowSet<br/><b>1) Connected</b> A connected RowSet Object is permanent in nature. It doesn''t terminate until the application is terminated.<br/><b>2) Disconnected</b> A disconnected RowSet object is ad-hoc in nature. Whenever it requires retrieving data from the database, it establishes the connection and closes it upon finishing the required task. The data that is modified during disconnected state is updated after the connection is re-established.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          106,
+                          3,
+                          'What is the use of blob, clob datatypes in JDBC?',
+                          'These are used to store large amount of data into database like images, movie etc which are extremely large in size.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          107,
+                          3,
+                          'Why do you have to close database connections in Java?',
+                          'You need to close the resultset, the statement and the connection. If the connection has come from a pool, closing it actually sends it back to the pool for reuse. We can do this in the finally{} block, such that if an exception is thrown, you still get the chance to close this.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          108,
+                          3,
+                          'What is the difference between execute, executeQuery, executeUpdate?',
+                          '<b>1) boolean execute() -</b> Executes the any kind of SQL statement.<br/><b>2) ResultSet executeQuery() -</b> This is used generally for reading the content of the database. The output will be in the form of ResultSet. Generally SELECT statement is used.<br/><b>3) int executeUpdate() -</b> This is generally used for altering the databases. Generally DROP TABLE or DATABASE, INSERT into TABLE, UPDATE TABLE, DELETE from TABLE statements will be used in this. The output will be in the form of int which denotes the number of rows affected by the query.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          109,
+                          3,
+                          'When will you get the message "No Suitable Driver"?',
+                          'When a Connection request is issued, the DriverManager asks each loaded driver if it understands the URL sent. When the URL passed is not properly constructed, then the "No Suitable Driver" message is returned.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          110,
+                          3,
+                          'What is a transaction?',
+                          'A transaction is a logical unit of work. To complete a logical unit of work, several actions may need to be taken against a database. Transactions are used to provide data integrity, correct application semantics, and a consistent view of data during concurrent access.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          111,
+                          3,
+                          'Why would you use a batch process?',
+                          'Batch Processing allows you to group related SQL statements into a batch and submit them with one call to the database.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          112,
+                          3,
+                          'What does setAutoCommit do?',
+                          'When a connection is created, it is in auto-commit mode. This means that each individual SQL statement is treated as a transaction and will be automatically committed right after it is executed. By setting auto-commit to false no SQL statements will be committed until you explicitly call the commit method.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          113,
+                          3,
+                          'Why will you set auto commit mode to false?',
+                          'Following are the reasons:<br/>1) To increase performance.<br/>2) To maintain the integrity of business processes.<br/>3) To use distributed transactions.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          114,
+                          3,
+                          'How does JDBC handle the data types of Java and database?',
+                          'The JDBC driver converts the Java data type to the appropriate JDBC type before sending it to the database. It uses a default mapping for most data types. For example, a Java int is converted to an SQL INTEGER.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          115,
+                          3,
+                          'What are the benefits of JDBC 4.0?',
+                          'Here are few advantages of JDBC 4.0<br/>1) Auto loading of JDBC driver class. In the earlier versions we had to manually register and load drivers using class.forName.<br/>2) Connection management enhancements. New methods added to javax.sql.PooledConnection.<br/>3) DataSet Implementation of SQL using annotations.<br/>4) SQL XML support.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          116,
+                          3,
+                          'Which type of JDBC driver is the fastest one?',
+                          'JDBC Net pure Java driver(Type 4) is the fastest driver because it converts the JDBC calls into vendor specific protocol calls and it directly interacts with the database.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          117,
+                          4,
+                          'What is Struts?',
+                          'Struts is a framework for developing MVC-based framework. Struts2 is the combination of Webwork and struts1 frameworks');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          118,
+                          4,
+                          'What is the difference between struts1 and struts2?',
+                          '<b>Struts 1:</b> Action class is not POJO. You need to inherit abstract class.<br/><b>Struts 2:</b> Action class is POJO. You don''t need to inherit any class or implement any interface.<br/><br/><b>Struts 1:</b> Front controller is ActionServlet.<br/><b>Struts 2:</b> Front Controller is StrutsPrepareAndExecuteFilter.<br/><br/><b>Struts 1:</b> It uses the concept of RequestProcessor class while processing request.<br/><b>Struts 2:</b> It uses the concept of Interceptors while processing the request.<br/><br/><b>Struts 1:</b> It has only JSP for the view component.<br/><b>Struts 2:</b> It has JSP, Freemarker, Valocity etc. for the view component.<br/><br/><b>Struts 1:</b> Configuration file name can be [anyname].xml and placed inside WEB-INF directory.<br/><b>Struts 2:</b> Configuration file must be struts.xml and placed inside classes directory.<br/><br/><b>Struts 1:</b> Action and Model are separate.<br/><b>Struts 2:</b>Action and Model are combined within action class.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          119,
+                          4,
+                          'What are the features of Struts?',
+                          '1) Configuration MVC components<br/>2) POJO based action<br/>3) AJAX Support<br/>4) Various Tag Support<br/>5) Various Result Types<br/>5) Integration Support<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          120,
+                          4,
+                          'What are the components of Struts Framework?',
+                          'Struts framework is comprised of following components:<br/><br/>1) Java Servlets<br/>2) JSP (Java Server Pages)<br/>3) Custom Tags<br/>4) Message Resources<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          121,
+                          4,
+                          'What''s the flow of requests in Struts based applications?',
+                          'Struts based applications use MVC design pattern. The flow of requests is as follows:<br/><br/>1) User interacts with View by clicking any link or by submitting any form.<br/>2) Upon user''s interaction, the request is passed towards the controller.<br/>3) Controller is responsible for passing the request to appropriate action.<br/>4) Action is responsible for calling a function in Model which has all business logic implemented.<br/>5) Response from the model layer is received back by the action which then passes it towards the view where user is able to see the response.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          122,
+                          4,
+                          'Which file is used by controller to get mapping information for request routing?',
+                          'Controller uses a configuration file "struts-config.xml" file to get all mapping information to decide which action to use for routing of user''s request');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          123,
+                          4,
+                          'What''s the role of Action Class in Struts?',
+                          'In Struts, Action Class acts as a controller and performs following key tasks:<br/><br/>1) After receiving user request, it processes the user''s request.<br/>2) Uses appropriate model and pulls data from model (if required).<br/>3) Selects proper view to show the response to the user.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          124,
+                          4,
+                          'What are the two types of validations supported by Validator FrameWork?',
+                          'Validator Framework is used for form data validation. This framework provides two types of validations:<br/><br/>1) Client Side validation on user''s browser<br/>2) Server side validation<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          125,
+                          4,
+                          'What are the steps of Struts Installation?',
+                          'In order to use Struts framework, we only need to add Struts.Jar file in our development environment. Once jar file is available in the CLASSPATH, we can use the framework and develop Strut based applications.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          126,
+                          4,
+                          'How duplicate form submission can be controlled in Struts?',
+                          'n Struts, action class provides two important methods which can be used to avoid duplicate form submissions.</br/>saveToken() method of action class generates a unique token and saves it in the user''s session. isTokenValid() method is used then used to check uniqueness of tokens.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          127,
+                          4,
+                          'In Struts, how can we access Java beans and their properties?',
+                          'Bean Tag Library is a Struts library which can be used for accessing Java beans.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          128,
+                          4,
+                          'Which configuration file is used for storing JSP configuration information in Struts?',
+                          'For JSP configuration details, Web.xml file is used.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          129,
+                          4,
+                          'What''s the difference between validation.xml and validator-rules.xml files in Struts Validation framework?',
+                          'In Validation.xml, we define validation rules for any specific Java bean while in validator-rules.xml file, standard and generic validation rules are defined.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          130,
+                          4,
+                          'How can we display all validation errors to user on JSP page?',
+                          'To display all validation errors based on the validation rules defined in validation.xml file, we use &lt;html:errors /&gt; tag in our JSP file.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          131,
+                          4,
+                          'What is DynaActionForm?',
+                          'DynaActionForm is a special type of actionForm class (sub-class of ActionForm Class) that''s used for dynamically creating form beans. It uses configuration files for form bean creation.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          132,
+                          4,
+                          'What is the difference between Jakarta Struts and Apache Struts? Which one is better to use?',
+                          'Both are same and there is no difference between them.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          133,
+                          4,
+                          'What is the use of Struts.xml configuration file?',
+                          'Struts.xml file is one the key configuration files of Struts framework which is used to define mapping between URL and action. When a user''s request is received by the controller, controller uses mapping information from this file to select appropriate action class.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          134,
+                          4,
+                          'What is the significance of logic tags in Struts?',
+                          'Use of logic tags in Struts helps in writing a clean and efficient code at presentation layer without use of scriptlets.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          135,
+                          4,
+                          'What are the two scope types for formbeans?',
+                          '1. Request Scope: Formbean values are available in the current request only<br/>2. Session Scope: Formbean values are available for all requests in the current session.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          136,
+                          4,
+                          'How can we group related actions in one group in Struts?',
+                          'To group multiple related actions in one group, we can use DispatcherAction class.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          137,
+                          4,
+                          'When should we use SwtichAction?',
+                          'The best scenario to use SwitchAction class is when we have a modular application with multiple modules working separately. Using SwitchAction class we can switch from a resource in one module to another resource in some different module of the application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          138,
+                          4,
+                          'What steps are required to for an application migration from Struts1 to Struts2?',
+                          'Following Steps are required for Struts1 to Struts2 migration:<br/><br/>1) Move Struts1 actionForm to Struts2 POJO.<br/>2) Convert Struts1 configuration file (struts-config.xml) to Struts2 configuration file (struts.xml)');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          139,
+                          4,
+                          'How properties of a form are validated in Struts?',
+                          'For validation of populated properties, validate() method of ActionForm class is used before handling the control of formbean to Action class.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          140,
+                          4,
+                          'What is the use of reset method of ActionForm class?',
+                          'reset method of actionForm class is used to clear the values of a form before initiation of a new request.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          141,
+                          4,
+                          'What is the use of resourcebundle.properties file in Struts Validation framework?',
+                          'resourcebundle.properties file is used to define specific error messages in key value pairs for any possible errors that may occur in the code.<br/>This approach helps to keep the code clean as developer doesn''t need to embed all error messages inside code.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          142,
+                          4,
+                          'How many servlet controllers are used in a Struts Application?',
+                          'Struts framework works on the concept of centralized control approach and the whole application is controlled by a single servlet controller. Hence, we require only one servlet controller in a servlet application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          143,
+                          4,
+                          'Which model components are supported by Struts?',
+                          'Struts support all types of models including Java beans, EJB, CORBA. However, Struts doesn''t have any in-built support for any specific model and it''s the developer''s choice to opt for any model.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          144,
+                          4,
+                          'When it''s useful to use IncludeAction?',
+                          'IncludeAction is action class provided by Struts which is useful when an integration is required between Struts and Servlet based application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          145,
+                          4,
+                          'Is Struts thread safe?',
+                          'Yes Struts are thread safe. In Struts, a new servlet object is not required to handle each request; rather a new thread of action class object is used for each new request.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          146,
+                          4,
+                          'What configuration changes are required to use resource files in Struts?',
+                          'Resource files (.properties files) can be used in Struts by adding following configuration entry in struts-config.xml file:<br/><br/>&lt;message-resources parameter="com.login.struts.ApplicationResources"/&gt;');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          147,
+                          4,
+                          'How nested beans can be used in Struts applications?',
+                          'Struts provide a separate tag library (Nested Tag Library) for this purpose. Using this library, we can nest the beans in any Struts based application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          148,
+                          4,
+                          'What are the Core classes of Struts Framework?',
+                          'Following are the core classes provided by Struts Framework:<br/><br/>1) Action Class<br/>2) ActionForm Class<br/>3) ActionMapping Class<br/>4) ActionForward Class<br/>5) ActionServlet Class');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          149,
+                          4,
+                          'Is Struts Framework part of J2EE?',
+                          'Although Struts framework is based on J2EE technologies like JSP, Java Beans, Servlets etc but it''s not a part of J2EE standards.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          150,
+                          4,
+                          'Why ActionServlet is singleton in Struts?',
+                          'In Struts framework, actionServlet acts as a controller and all the requests made by users are controlled by this controller. ActionServlet is based on singleton design patter as only one object needs to be created for this controller class. Multiple threads are created later for each user request.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          151,
+                          4,
+                          'Which technologies can be used at View Layer in Struts?',
+                          'In Struts, we can use any of the following technologies in view layer:<br/><br/>1) JSP<br/>2) HTML<br/>3) XML/XSLT<br/>4) WML Files<br/>5) Velocity Templates<br/>6) Servlets<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          152,
+                          4,
+                          'What is MVC?',
+                          'MVC is a design pattern. MVC stands for Model, View and Controller. Model represents data, view represents presentation and controller acts as an interface between model and view.<br/><br/>1) <b>Model</b> The model represents the state (data) and business logic of the application.<br/>2) <b>View</b> The view module is responsible to display data i.e. it represents the presentation.<br/>3) <b>Controller</b> The controller module acts as an interface between view and model. It intercepts all the requests i.e. receives input and commands to Model / View to change accordingly.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          153,
+                          4,
+                          'What is the role of a handler in MVC based applications?',
+                          'It''s the job of handlers to transfer the requests to appropriate models as they are bound to the model layer of MVC architecture. Handlers use mapping information from configuration files for request transfer.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          154,
+                          4,
+                          'What is interceptor?',
+                          'Interceptor is an object i.e. invoked at preprocessing and postprocessing of a request. It is pluggable.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          155,
+                          4,
+                          'What are the life cycle methods of interceptor?',
+                          '1) public void init()<br/>2) public void intercept(ActionInvocation ai)<br/>3) public void destroy()<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          156,
+                          4,
+                          'What is ValueStack?',
+                          'ValueStack is a stack that contains application specific object such as action and other model.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          157,
+                          4,
+                          'What is ActionContext?',
+                          'ActionContext is a container in which action is executed. It is unique per thread.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          158,
+                          4,
+                          'What is ActionInvocation?',
+                          'ActionInvocation is responsible to invoke action. It holds action and interceptor objects.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          159,
+                          4,
+                          'What is OGNL?',
+                          'OGNL is an expression language of struts2. It stands for Object Graph Navigation Language.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          160,
+                          4,
+                          'What are the 5 constants of Action interface?',
+                          '1) SUCCESS<br/>2) ERROR<br/>3) INPUT<br/>4) LOGIN<br/>5) NONE');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          161,
+                          4,
+                          'What does params interceptor?',
+                          'The params (also known as parameters) interceptor sets all parameters on the ValueStack.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          162,
+                          4,
+                          'What does execAndWait interceptor?',
+                          'The execAndWait (also known as ExecuteAndWait) interceptor is used to display intermediate or wait result.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          163,
+                          4,
+                          'What does modelDriven interceptor?',
+                          'The modelDriven interceptor makes other model as the default object of ValueStack. By default, action is the default object of ValueStack.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          164,
+                          4,
+                          'What does validation interceptor?',
+                          'The validation interceptor performs validation checks and adds field-level and action-level error messages.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          165,
+                          4,
+                          'What are the bundled validators?',
+                          '1) requiredstring<br/>2) stringlength<br/>3) email<br/>4) date<br/>5) int<br/>6) double<br/>7) url<br/>8) regex');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          166,
+                          4,
+                          'What is the difference between plain-validator and field-validator?',
+                          'In plain-validator one validator can be applied to many fields. In field-validator many validators can be applied to single field.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          167,
+                          4,
+                          'What is the use of jsonValidation?',
+                          'The jsonValidation interceptor is used to perform asynchronous validation. It works with validation and workflow interceptors.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          168,
+                          4,
+                          'What are the aware interfaces in struts2?',
+                          'Aware interfaces are used to store information in request, session, application and response objects. The 4 aware interfaces are given below:<br/><br/>1) ServletRequestAware<br/>2) ServletResponseAware<br/>3) SessionAware<br/>4) ServletContextAware<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          169,
+                          4,
+                          'What does i18n interceptor?',
+                          'The i18n interceptor is used to provide multi lingual support for struts application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          170,
+                          5,
+                          'What is ORM?',
+                          'ORM stands for object/relational mapping. ORM is the automated persistence of objects in a Java application to the tables in a relational database.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          171,
+                          5,
+                          'What does ORM consists of?',
+                          'An ORM solution consists of the followig four pieces:<br/>1) API for performing basic CRUD operations<br/>2) API to express queries refering to classes<br/>3) Facilities to specify metadata<br/>4) Optimization facilities : dirty checking,lazy associations fetching<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          172,
+                          5,
+                          'What are the ORM levels?',
+                          'The ORM levels are:<br/>1) Pure relational (stored procedure.)<br/>2) Light objects mapping (JDBC)<br/>3) Medium object mapping<br/>4) Full object Mapping (composition,inheritance, polymorphism, persistence by reachability)<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          173,
+                          5,
+                          'What is Hibernate?',
+                          'Hibernate is a pure Java object-relational mapping (ORM) and persistence framework that allows you to map plain old Java objects to relational database tables using (XML) configuration files.Its purpose is to relieve the developer from a significant amount of relational data persistence-related programming tasks.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          174,
+                          5,
+                          'Why do you need ORM tools like hibernate?',
+                          'The main advantage of ORM like hibernate is that it shields developers from messy SQL. Apart from this, ORM provides following benefits:<br/><b>1) Improved productivity:</b> High-level object-oriented API, Less Java code to write, No SQL to write<br/><b>2) Improved performance:</b> Sophisticated caching, Lazy loading, Eager loading<br/><b>3) Improved maintainability:</b> A lot less code to write<br/><b>4) Improved portability:</b> ORM framework generates database-specific SQL for you');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          175,
+                          5,
+                          'What Does Hibernate Simplify?',
+                          'Hibernate simplifies:<br/>1) Saving and retrieving your domain objects<br/>2) Making database column and table name changes<br/>3) Centralizing pre save and post retrieve logic<br/>4) Complex joins for retrieving related items<br/>5) Schema creation from object model');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          176,
+                          5,
+                          'What are the most common methods of Hibernate configuration?',
+                          'The most common methods of Hibernate configuration are:<br/>1) Programmatic configuration<br/>2) XML configuration (hibernate.cfg.xml)');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          177,
+                          5,
+                          'What are the core interfaces of Hibernate?',
+                          'The core interfaces of Hibernate framework are:<br/>1) Configuration<br/>2) SessionFactory<br/>3) Session<br/>4) Query<br/>5) Criteria<br/>6) Transaction');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          178,
+                          5,
+                          'What role does the Session interface play in Hibernate?',
+                          'The Session interface is the primary interface used by Hibernate applications. It is a single-threaded, short-lived object representing a conversation between the application and the persistent store. It allows you to create query objects to retrieve persistent objects.<br/><br/><b>Session session = sessionFactory.openSession();</b><br/><br/>Session interface role:<br/>Wraps a JDBC connection<br/>Factory for Transaction<br/>Holds a mandatory (first-level) cache of persistent objects, used when navigating the object graph or looking up objects by identifier');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          179,
+                          5,
+                          'What is Session?',
+                          'It maintains a connection between hibernate application and database.<br/>It provides methods to store, update, delete or fetch data from the database such as persist(), update(), delete(), load(), get() etc.<br/>It is a factory of Query, Criteria and Transaction i.e. it provides factory methods to return these instances.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          180,
+                          5,
+                          'Is Session a thread-safe object?',
+                          'No, Session is not a thread-safe object, many threads can access it simultaneously. In other words, you can share it between threads.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          181,
+                          5,
+                          'What is the difference between session.save() and session.persist() method?',
+                          '<b>save():</b> returns the identifier (Serializable) of the instance.<br/><b>persist():</b> return nothing because its return type is void.<br/><br/><b>save():</b> Syn: public Serializable save(Object o)<br/><b>persist():</b> Syn: public void persist(Object o)<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          182,
+                          5,
+                          'What role does the SessionFactory interface play in Hibernate?',
+                          'The application obtains Session instances from a SessionFactory. There is typically a single SessionFactory for the whole application?reated during application initialization. The SessionFactory caches generate SQL statements and other mapping metadata that Hibernate uses at runtime. It also holds cached data that has been read in one unit of work and may be reused in a future unit of work<br/><br/>SessionFactory sessionFactory = configuration.buildSessionFactory();');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          183,
+                          5,
+                          'Is SessionFactory a thread-safe object?',
+                          'Yes, SessionFactory is a thread-safe object, many threads cannot access it simultaneously.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          184,
+                          5,
+                          'What is the general flow of Hibernate communication with RDBMS?',
+                          'The general flow of Hibernate communication with RDBMS is :<br/>1) Load the Hibernate configuration file and create configuration object. It will automatically load all hbm mapping files<br/>2) Create session factory from configuration object<br/>3) Get one session from this session factory<br/>4) Create HQL Query<br/>5) Execute query to get list containing Java objects<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          185,
+                          5,
+                          'What is Hibernate Query Language (HQL)?',
+                          'Hibernate offers a query language that embodies a very powerful and flexible mechanism to query, store, update, and retrieve objects from a database. This language, the Hibernate query Language (HQL), is an object-oriented extension to SQL.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          186,
+                          5,
+                          'How do you map Java Objects with Database tables?',
+                          '1) First we need to write Java domain objects (beans with setter and getter).<br/>2) Write hbm.xml, where we map java class to table and database columns to Java class variables.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          187,
+                          5,
+                          'What is the difference between get and load method?',
+                          'The differences between get() and load() methods are given below.<br/><br/><b>get():</b> Returns null if object is not found.<br/><b>load():</b> Throws ObjectNotFoundException if object is not found.<br/><br/><b>get():</b> get() method always hit the database.<br/><b>load():</b> load() method doesn''t hit the database.<br/><br/><b>get():</b> It returns real object not proxy.<br/><b>load():</b> It returns proxy object.<br/><br/><b>get():</b> It should be used if you are not sure about the existence of instance.<br/><b>load():</b> It should be used if you are sure that instance exists.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          188,
+                          5,
+                          'What is the difference between and merge and update ?',
+                          'Use update() if you are sure that the session does not contain an already persistent instance with the same identifier, and merge() if you want to merge your modifications at any time without consideration of the state of the session.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          189,
+                          5,
+                          'What are the states of object in hibernate?',
+                          'There are 3 states of object (instance) in hibernate.<br/><br/><b>Transient:</b> The object is in transient state if it is just created but has no primary key (identifier) and not associated with session.<br/><b>Persistent:</b> The object is in persistent state if session is open, and you just saved the instance in the database or retrieved the instance from the database.<br/><b>Detached:</b> The object is in detached state if session is closed. After detached state, object comes to persistent state if you call lock() or update() method.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          190,
+                          5,
+                          'What are the inheritance mapping strategies?',
+                          'There are 3 ways of inheritance mapping in hibernate.<br/>1) Table per hierarchy<br/>2) Table per concrete class<br/>3) Table per subclass<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          191,
+                          5,
+                          'How to make a immutable class in hibernate?',
+                          'If you mark a class as mutable="false", class will be treated as an immutable class. By default, it is mutable="true".');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          192,
+                          5,
+                          'How many types of association mapping are possible in hibernate?',
+                          'There can be 4 types of association mapping in hibernate.1) One to One<br/>2) One to Many<br/>3) Many to One<br/>4) Many to Many');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          193,
+                          5,
+                          'Is it possible to perform collection mapping with One-to-One and Many-to-One?',
+                          'No, collection mapping can only be performed with One-to-Many and Many-to-Many');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          194,
+                          5,
+                          'What is lazy loading in hibernate?',
+                          'Lazy loading in hibernate improves the performance. It loads the child objects on demand.<br/><br/>Since Hibernate 3, lazy loading is enabled by default, you don''t need to do lazy="true". It means not to load the child objects when parent is loaded.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          195,
+                          5,
+                          'What is HQL (Hibernate Query Language)?',
+                          'Hibernate Query Language is known as an object oriented query language. It is like structured query language (SQL).<br/><br/>The main advantage of HQL over SQL is:<br/><br/>1) You don''t need to learn SQL<br/>2) Database independent<br/>3) Simple to write query<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          196,
+                          5,
+                          'What is the difference between first level cache and second level cache?',
+                          'First Level Cache is associated with Session.<br/>Second Level Cache is associated with SessionFactory.<br/><br/>It is enabled by default.<br/>It is not enabled by default.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          197,
+                          5,
+                          'Define cascade and inverse option in one-many mapping?',
+                          'cascade - enable operations to cascade to child entities.<br/>cascade="all|none|save-update|delete|all-delete-orphan"<br/>inverse - mark this collection as the "inverse" end of a bidirectional association.<br/>inverse="true|false" <br/>Essentially "inverse" indicates which end of a relationship should be ignored, so when persisting a parent who has a collection of children, should you ask the parent for its list of children, or ask the children who the parents are?');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          198,
+                          5,
+                          'Define HibernateTemplate?',
+                          'org.springframework.orm.hibernate.HibernateTemplate is a helper class which provides different methods for querying/retrieving data from the database. It also converts checked HibernateExceptions into unchecked DataAccessExceptions.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          199,
+                          5,
+                          'What are the benefits does HibernateTemplate provide?',
+                          'The benefits of HibernateTemplate are :<br/>1) HibernateTemplate, a Spring Template class simplifies interactions with Hibernate Session.<br/>2) Common functions are simplified to single method calls.<br/>3) Sessions are automatically closed.<br/>4) Exceptions are automatically caught and converted to runtime exceptions.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          200,
+                          5,
+                          'How do you switch between relational databases without code changes?',
+                          'Using Hibernate SQL Dialects , we can switch databases. Hibernate will generate appropriate hql queries based on the dialect defined.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          201,
+                          5,
+                          'If you want to see the Hibernate generated SQL statements on console, what should we do?',
+                          'In Hibernate configuration file set as follows: <br/>&lt;property name="show_sql"&gt;true&lt;/property&gt;');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          202,
+                          5,
+                          'What are derived properties?',
+                          'The properties that are not mapped to a column, but calculated at runtime by evaluation of an expression are called derived properties. The expression can be defined using the formula attribute of the element.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          203,
+                          5,
+                          'What is the difference between sorted and ordered collection in hibernate?',
+                          '<b>Sorted collection</b> A sorted collection is sorting a collection by utilizing the sorting features provided by the Java collections framework. The sorting occurs in the memory of JVM which running Hibernate, after the data being read from database using java comparator.<br/><b>Order collection</b> Order collection is sorting a collection by specifying the order-by clause for sorting this collection when retrieval.<br/><br/><b>Sorted collection</b> If your collection is not large, it will be more efficient way to sort it.<br/><b>Order collection</b> If your collection is very large, it will be more efficient way to sort it.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          204,
+                          5,
+                          'What are the Collection types in Hibernate ?',
+                          '1) Bag<br/>2) Set<br/>3) List<br/>4) Array<br/>5) Map');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          205,
+                          5,
+                          'What is Hibernate proxy?',
+                          'The proxy attribute enables lazy initialization of persistent instances of the class. Hibernate will initially return CGLIB proxies which implement the named interface. The actual persistent object will be loaded when a method of the proxy is invoked.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          206,
+                          5,
+                          'How can Hibernate be configured to access an instance variable directly and not through a setter method ?',
+                          'By mapping the property with access="field" in Hibernate metadata. This forces hibernate to bypass the setter method and access the instance variable directly while initializing a newly loaded object.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          207,
+                          5,
+                          'What do you mean by fetching strategy ?',
+                          'A fetching strategy is the strategy Hibernate will use for retrieving associated objects if the application needs to navigate the association. Fetch strategies may be declared in the O/R mapping metadata, or over-ridden by a particular HQL or Criteria query.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          208,
+                          5,
+                          'What is automatic dirty checking?',
+                          'Automatic dirty checking is a feature that saves us the effort of explicitly asking Hibernate to update the database when we modify the state of an object inside a transaction.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          209,
+                          5,
+                          'What is transactional write-behind?',
+                          'Hibernate uses a sophisticated algorithm to determine an efficient ordering that avoids database foreign key constraint violations but is still sufficiently predictable to the user. This feature is called transactional write-behind.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          210,
+                          5,
+                          'What are Callback interfaces?',
+                          'Callback interfaces allow the application to receive a notification when something interesting happens to an object for example, when an object is loaded, saved, or deleted. Hibernate applications don''t need to implement these callbacks, but they''re useful for implementing certain kinds of generic functionality.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          211,
+                          6,
+                          'What is Spring?',
+                          'Spring is set to be a framework which helps Java programmer for development of code and it provides IOC container, Dependency Injector, MVC flow and many other APIs for the java programmer.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          212,
+                          6,
+                          'What are the advantages of spring framework?',
+                          'Following are the advantages of spring framework:<br/><br/>&#8226; Predefined Templates<br/>&#8226; Loose Coupling<br/>&#8226; Easy to test<br/>&#8226; Lightweight<br/>&#8226; Fast Development<br/>&#8226; Powerful Abstraction<br/>&#8226; Declarative support<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          213,
+                          6,
+                          'What are the benefits of Spring Framework?',
+                          'Following are the benefits of Spring framework:<br/><br/>&#8226; Extensive usage of Components<br/>&#8226; Reusability<br/>&#8226; Decoupling<br/>&#8226; Reduces coding effort by using pattern implementations such as singleton, factory, service locator etc.<br/>&#8226; Removal of leaking connections<br/>&#8226; Declarative transaction management<br/>&#8226; Easy to integrate with third party tools and technologies.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          214,
+                          6,
+                          'Name the various modules used in spring framework?',
+                          '&#8226; AOP module (Aspect Oriented Programming)<br/>&#8226; JDBC abstraction and DAO module<br/>&#8226; The Core container module<br/>&#8226; MVC framework module<br/>&#8226; Application context module<br/>&#8226; O/R mapping integration module (Object/Relational)<br/>&#8226; Web module<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          215,
+                          6,
+                          'Why Spring framework is needed?',
+                          'Spring framework is needed because it is -<br/><br/>&#8226; A light weight framework for building Java applications. This means any type of Java application: standalone java, JEE applications, Web applications etc.<br/>&#8226; Spring provides IOC  (Inversion of Control) <br/>&#8226; Spring provides DI (Dependency Injection) Capabilities<br/>&#8226; Spring provides declarative programming with AOP (Aspect Oriented Programming)<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          216,
+                          6,
+                          'What is IOC or Dependency Injection?',
+                          'IOC (Inversion of Control pattern) is also known as dependency injection. IOC a design pattern by which Loose coupling is achieved in Spring, with the Inversion of Control technique.It removes the dependency from the program.The objects give their dependencies instead of creating or looking for dependent objects.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          217,
+                          6,
+                          'Write the benefits of using IOC?',
+                          'The major benefits of dependency injection or IOC are that it reduces the amount of coding required for the application. This allows the testing of the application to be done quickly and easily as no JNDI lookup mechanism or singletons are required. IOC containers also support lazy loading and eager installation of services.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          218,
+                          6,
+                          'What are the different types of IOC?',
+                          'There are two types of IOC containers in spring framework:<br/><br/>&#8226; <b>Constructor-based dependency injection:</b> Constructor-based DI is accomplished when the container invokes a class constructor with a number of arguments, each representing a dependency on other class.<br/><br/>&#8226; <b>Setter-based dependency injection:</b> Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or no-argument static factory method to instantiate your bean.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          219,
+                          6,
+                          'What is IOC Container?',
+                          'The Spring IOC is responsible for creating the objects, managing them (with dependency injection (DI)), wiring them together, configuring them, as also managing their complete lifecycle.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          220,
+                          6,
+                          'What is the role of IOC container in spring?',
+                          'The role of IOC container in spring is to instantiate, configure and assemble the objects.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          221,
+                          6,
+                          'What are the types of IOC containers?',
+                          'The types of IOC containers are:<br/><br/>&#8226; <b>BeanFactory Container:</b> This is the simplest container providing basic support for DI. It is a Lightweight container which loads bean definitions and manages your beans. The BeanFactory is usually preferred where the resources are limited like mobile devices or applet based applications. Beans are configured using XML file and manage singleton defined bean. It also removes adhoc singletons and factories. It is also responsible for life cycle methods and injects dependencies.<br/><br/>&#8226; <b>ApplicationContext Container:</b> This container adds more enterprise-specific functionality such as the ability to resolve textual messages from a properties file and the ability to publish application events to interested event listeners.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          222,
+                          6,
+                          'What is the difference between ApplicationContext and BeanFactory?',
+                          'The difference between ApplicationContext and BeanFactory:<br/><br/>1. ApplicationContext is the advanced container.<br/>1. BeanFactory is the basic container.<br/><br/>2. ApplicationContext extends the BeanFactory interface<br/>2. BeanFactory does not extends the BeanFactory interface<br/><br/>3. ApplicationContext allows more than one config files to exist.<br/>3. BeanFactory only permits one config files to exist.<br/><br/>4. ApplicationContext can print events to beans registered as listeners.<br/>4. BeanFactory cannot print events to beans registered as listeners.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          223,
+                          6,
+                          'What is BeanFactory?',
+                          'Bean Factory is core of the spring framework and, it is a Lightweight container which loads bean definitions and manages your beans. Beans are configured using XML file and manage singleton defined bean. It is also responsible for life cycle methods and injects dependencies. It also removes adhoc singletons and factories.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          224,
+                          6,
+                          'Give an example of BeanFactory implementation?',
+                          'The most commonly used BeanFactory implementation is the XmlBeanFactory class. This container reads the configuration metadata from an XML file and uses it to create a fully configured system or application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          225,
+                          6,
+                          'What are the common implementations of the ApplicationContext?',
+                          'The common implementations of the ApplicationContext are:<br/><br/>1. FileSystemXmlApplicationContext<br/>2. ClassPathXmlApplicationContext<br/>3. WebXmlApplicationContext<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          226,
+                          6,
+                          'What are the methods of bean life cycle?',
+                          'There are two important methods of Bean life cycle:<br/><br/> &#8226; Setup:  called when bean is loaded into container<br/>&#8226; Teardown:  called when bean is unloaded into container<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          227,
+                          6,
+                          'How is a bean added to a Spring application?',
+                          '<blockquote>&lt;?xml version=''1.0'' encoding=''UTF-8''?&gt;<br/>&lt;!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"&gt;<br/>&lt;beans&gt;<br/>&lt;bean iqid="foo"/&gt;br/>&lt;bean iqid="bar"/&gt;<br/>&lt;/beans&gt;<br/></blockquote><br/>The bean tag has an iqid attribute which stores the bean name and a class attributes which specifies the full class name.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          228,
+                          6,
+                          'What are the different bean scopes in spring?',
+                          'The different bean scopes in spring are:<br/><br/><b>Singleton:</b> The bean instance will be only once and same instance will be returned by the IOC container.<br/><b>Prototype:</b> The bean instance will be created each time when requested.<br/><b>Request:</b> The bean instance will be created per HTTP request.<br/><b>Session:</b> The bean instance will be created per HTTP session.<br/><b>GlobalSession:</b> The bean instance will be created per HTTP global session.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          229,
+                          6,
+                          'Is Singleton beans are thread safe in Spring Framework?',
+                          'No, singleton beans are not thread-safe in Spring framework.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          230,
+                          6,
+                          'What is the default scope of bean in Spring framework?',
+                          'The default scope of bean is Singleton for Spring framework.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          231,
+                          6,
+                          'What is the lifecycle of bean in Spring framework?',
+                          '1. Instantiate<br/>2. Populate properties<br/>3. Set Bean Name<br/>4. Set Bean factory<br/>5. Pre Initialization<br/>6. Initialize beans<br/>7. Post Initialization<br/>8. Ready to use<br/>9. Destroy<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          232,
+                          6,
+                          'Write about Core container module?',
+                          'Core container module is responsible for the basic functionality of the spring framework. The whole Spring framework is built with this module as a base.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          233,
+                          6,
+                          'Explain the web module?',
+                          'The Spring web module is built on the application context module, providing a context that is appropriate for web-based applications. This module also contains support for several web-oriented tasks such as transparently handling multipart requests for file uploads and programmatic binding of request parameters to your business objects. This group comprises of Web, Web-Servlet, Web-Struts and Web-Portlet. These modules provide support to create web application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          234,
+                          6,
+                          'Explain Spring MVC module?',
+                          'The Spring web MVC framework provides model-view-controller architecture and ready components that can be used to develop flexible and loosely coupled web applications. The MVC pattern results in separating the different aspects of the application (input logic, business logic, and UI logic), while providing a loose coupling between these elements.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          235,
+                          6,
+                          'What is Auto Wiring?',
+                          'Autowiring is used to build relationships between the collaborating beans. Spring container can automatically resolve collaborators for beans.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          236,
+                          6,
+                          'What are the different Modes of Autowiring?',
+                          'Autowiring has five different modes:<br/><br/>&#8226; no: no autowire<br/>&#8226; byName : Autowiring that can be done by property name<br/>&#8226; byType : property type as autowired<br/> &#8226; constructor: It is similar to byType and it is property is in constructor<br/>&#8226; autodetect : Spring is allowed to select autowiring from byType or constructor');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          237,
+                          6,
+                          'What does @Controller annotation?',
+                          'The <b>@Controller</b> annotation marks the class as controller class. It is applied on the class.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          238,
+                          6,
+                          'What does @Autowired annotation?',
+                          'The <b>@Autowired</b> annotation annotation provides more fine-grained control over where and how autowiring should be accomplished. The <b>@Autowired</b> annotation can be used to autowire bean on the setter method just like <b>@Required</b> annotation, constructor, a property or methods with arbitrary names and/or multiple arguments.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          239,
+                          6,
+                          'What does @Qualifier annotation mean?',
+                          'There may be a situation when you create more than one bean of the same type and want to wire only one of them with a property, in such case you can use <b>@Qualifier</b> annotation along with<b>@Autowired</b> to remove the confusion by specifying which exact bean will be wired.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          240,
+                          6,
+                          'What does @RequestMapping annotation mean?',
+                          'The <b>@RequestMapping</b> annotation maps the request with the method. It is applied on the method');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          241,
+                          6,
+                          'What does @Required annotation mean?',
+                          'The <b>@Required</b> annotation simply indicates that the affected bean property must be populated at configuration time, through an explicit property value in a bean definition or through autowiring. The container throws BeanInitializationException if the affected bean property has not been populated.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          242,
+                          6,
+                          'What is WebApplicationContext ?',
+                          'The WebApplicationContext is an extension of the plain ApplicationContext that has some extra features necessary for web applications. It differs from a normal ApplicationContext in that it is capable of resolving themes, and that it knows which servlet it is associated with.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          243,
+                          6,
+                          'What is AOP module?',
+                          'AOP is an acronym for <b>Aspect Oriented Programming</b>. It is a methodology that divides the program logic into pieces or parts or concerns.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          244,
+                          6,
+                          'What are the AOP implementation?',
+                          'There are 3 AOP implementation:<br/><br/>1. Spring AOP<br/>2. Apache AspectJ<br/>3. JBoss AOP<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          245,
+                          6,
+                          'What are the advantages of spring AOP?',
+                          'The advantages of spring AOP are:<br/><br/>1. It increases the modularity and the key unit is Aspect.<br/><br/>2. AOP breaks the program logic into distinct parts<br/><br/>3. It provides the pluggable way to dynamically add the additional concern before, after or around the actual logic.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          246,
+                          6,
+                          'What are the AOP terminology?',
+                          'The AOP terminology are:<br/><br/>1. JoinPoint<br/>2. Advice<br/>3. Pointcut<br/>4. Aspect<br/>5. Introduction<br/>6. Target Object<br/>7. Interceptor<br/>8. AOP Proxy<br/>9. Weaving<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          247,
+                          6,
+                          'What is a Joinpoint?',
+                          'The point where an aspect can be introduced in the application is known as a joinpoint. This point could be a field being modified, a method being called or even an exception being thrown. At these points, the new aspect''s code can be added to introduce a new behavior to the application.<br/><br/>Aspect code can be inserted at this point into normal flow of application to change the current behavior.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          248,
+                          6,
+                          'What is Advice?',
+                          'This is the actual action to be taken either before or after the method execution. This is actual piece of code that is invoked during program execution by Spring AOP framework.Advice represents action taken by aspect');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          249,
+                          6,
+                          'What are the types of advice in AOP?',
+                          'There are 5 types of advices in spring AOP.<br/><br/>&#8226; <b>Before Advice:</b> Run advice before the a method execution.<br/><br/>&#8226; <b>After Advice:</b> Run advice after the a method execution regardless of its outcome.<br/><br/>&#8226; <b>After Returning Advice:</b> Run advice after the a method execution only if method completes successfully.<br/><br/>&#8226; <b>Throws Advice:</b> Run advice after the a method execution only if method exits by throwing an exception.<br/><br/>&#8226; <b>Around Advice:</b> Run advice before and after the advised method is invoked.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          250,
+                          6,
+                          'What is Pointcut?',
+                          'This is a set of one or more joinpoints where an advice should be executed.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          251,
+                          6,
+                          'What is Aspect?',
+                          'Aspect is a class in spring AOP that contains advices and joinpoints');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          252,
+                          6,
+                          'What is Introduction?',
+                          'An introduction allows you to add new methods or attributes to existing classes.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          253,
+                          6,
+                          'What is Target Object?',
+                          'Target Object is a proxy object that is advised by one or more aspects.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          254,
+                          6,
+                          'What is interceptor?',
+                          'Interceptor is a class like aspect that contains one advice only.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          255,
+                          6,
+                          'What is weaving?',
+                          'Weaving is a process of linking aspect with other application.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          256,
+                          6,
+                          'What is Autoproxying?',
+                          'Autoproxying is used to create proxy automatically for the spring users. It provides following two classes to support this automatic proxy creation:<br/><br/>&#8226; BeanNameAutoProxyCreator<br/>&#8226; DefaultAdvisorAutoProxyCreator<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          257,
+                          6,
+                          'What are the different types of AutoProxying?',
+                          'Following are the different types of AutoProxying:<br/><br/>&#8226; BeanNameAutoProxyCreator<br/>&#8226; DefaultAdvisorAutoProxyCreator<br/>&#8226; Metadata autoproxying<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          258,
+                          6,
+                          'In what points, can weaving be applied?',
+                          'Following are the points where weaving can be applied:<br/><br/>&#8226; Compile Time<br/>&#8226; Class load Time<br/>&#8226; Runtime');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          259,
+                          6,
+                          'What is called PreparedStatementCreator?',
+                          'PreparedStatementCreator is one of the most commonly used interfaces for writing data to the database.  createPreparedStatement() is a method that can be used to create and return PreparedStatement from the Connection argument, and exception handling is automatically taken care of. When this interface is implemented, a different interface SqlProvider can also be implemented which has a method called getSql(). This method is useful for providing sql strings to the JdbcTemplate. It does not handle SQLExceptions.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          260,
+                          6,
+                          'What is SQLProvider?',
+                          'SQLProvider has only one method called getSql()and it is implemented using PreparedStatementCreator implementers. It is mainly used for debugging.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          261,
+                          6,
+                          'Write about BatchPreparedStatementSetter?',
+                          'BatchPreparedStatementSetter is used to update more than a single row in one go, they can use BatchPreparedStatementSetter. This interface provides two methods they are<br/><blockquote>&#8226; setValues( PreparedStatement ps, int i) throws SOL exception</blockquote><blockquote>&#8226; int getBatchSize</blockquote><br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          262,
+                          6,
+                          'What is the better method of using JDBC in Spring?',
+                          'If JDBC is used with the template class called JdbcTemplate, it gives a better performance.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          263,
+                          6,
+                          'Describe about DAO in Spring framework?',
+                          'DAO is used to provide integration of Java database connectivity and Object relational mapping objects. DAO is spring framework provides connection for JDBC, hibernate, JDO, JPA, Common client interface and Oracle.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          264,
+                          6,
+                          'What exceptions do the DAO classes, use in Spring throw?',
+                          'In spring DAO classes only throws SQLException.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          265,
+                          6,
+                          'Explain the advantages of using DAO module?',
+                          'The database code can be kept clean and simple by using the DAO module. This helps in preventing problems that rise because of poor handling of closures of database resources. Also, the DAO module utilizes the AOP module to enable objects in the Spring application to use transaction management services.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          266,
+                          6,
+                          'What is DataAccessException?',
+                          'DataAccessException is a RuntimeException. It is an Unchecked Exception. The user cannot be forced to handle these kinds of exceptions.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          267,
+                          6,
+                          'What is XMLBeanFactory?',
+                          'Spring includes several applications of Bean factory. Out of these, <blockquote>org.springframework.beans.factory.xml.XmlBeanFactory</blockquote> is a very important one. It loads the beans on the basis of the definitions stored in an XML file. For the creation of an XmlBeanFactory, a java.io.InputStream is passed to the constructor. The InputStream provides the XML to the factory. For example, for retrieval of the bean, the <b>getBean()</b> method is called by passing the name of the desired bean.<br/><br/><blockquote>MyBean helloBean = (MyBean) factory.getBean("helloBean");</blockquote>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          268,
+                          6,
+                          'Name the Exception class which is connected to the exceptions thrown by the applications?',
+                          'It is the <b>DataAccessException</b> given by <blockquote>org.springframework.dao.DataAccessException</blockquote>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          269,
+                          6,
+                          'How can the default lifecycle methods of beans be nullified?',
+                          'The tag, bean, has two useful attributes which can be used to define special initialization and destruction methods.<br/><br/>For Example, two new methods forSetup and forTeardown can be added to the Foo class in the following way:<br/><blockquote>&lt;beans&gt;<br/>&lt;bean iqid="bar" init-method="forSetup" destroy="forTeardown"/&gt;<br/>&lt;/beans&gt;<blockquote>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          270,
+                          6,
+                          'What is cross cutting concern and concern in spring AOP?',
+                          'Cross cutting concern: It is a concern which is applicable throughout the application and it affects the entire application. E.g Security, logging and data transfer are the concerns which are needed in almost every module of an application.<br/><br/>Concern: Concern is a behavior that we want to have in a module of an application. Issues in which we are interested defines our concern.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          271,
+                          6,
+                          'What classes are used to Control the database connection?',
+                          'Following are the classes that are used to control database connection:<br/><br/>&#8226; Data Source Utils<br/>&#8226; SmartData Source<br/>&#8226; AbstractData Source<br/>&#8226; SingleConnection DataSource<br/>&#8226; DriverManager DataSource<br/>&#8226; TransactionAware DataSourceProxy<br/>&#8226; DataSource TransactionManager<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          272,
+                          6,
+                          'Explain the RowCallbackHandler in Spring?',
+                          'The RowCallbackHandler is called for each row in ResultSet and is used to read values from the ResultSet.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          273,
+                          6,
+                          'Name the types of transaction management that are supported by Spring?',
+                          'Transaction management supported by Spring are:<br/><br/>&#8226; Declarative transaction management.<br/>&#8226; Programmatic transaction management.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          274,
+                          6,
+                          'When are declarative and programmatic transaction management used?',
+                          'When only a small amount of transactional operations is there, it is advised to use Programmatic transaction management. But if there is a big amount of transactional operations to be taken care of, declarative transaction management is preferred.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          275,
+                          6,
+                          'Why is declarative transaction management preferred in Spring?',
+                          'Declarative transaction management has minimum impact on the application code and, therefore, is an idealistic lightweight container.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          276,
+                          6,
+                          'What is called spring configuration file?',
+                          'Spring configuration file is an XML file and it contains class information. It also describes how these classes are configured and interact with each other.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          277,
+                          6,
+                          'What is difference between singleton and prototype bean?',
+                          '<b>Singleton Bean</b> - Single bean definition to a single object instance per Spring IOC container<br/><br/><b>Prototype Bean</b> - Single bean definition to any number of object instances per Spring IOC Container');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          278,
+                          6,
+                          'How can beans be made singleton or prototype?',
+                          'The bean tag has an attribute called <b>"singleton"</b>. The bean is singleton if its value is <b>"TRUE"</b>, otherwise the bean is a prototype.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          279,
+                          6,
+                          'What is Metadata Autoproxying?',
+                          'Metadata Autoproxying can be performed inspiring which can be driven by metadata. This is determined by source level attributes and keeps metadata inside the source code.<br/><br/>This maintains metadata in one place and mainly used for declarative transaction support.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          280,
+                          6,
+                          'What is ''Throws advice'' in Spring?',
+                          '''Throws Advice'' define the behavior when an exception occurs. It is an interface and it has no methods which need to be implemented.<br/><br/>A class that implements this interface should have method with this signature:<br/><br/><blockquote>&#8226; Void samplethrow (Throw table t)<br/><br/></blockquote><blockquote>&#8226; Void samplethrow(Method m, Object[] o, Object target, Throw tablet)</blockquote>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          281,
+                          6,
+                          'What are the various editors used in spring work?',
+                          'The various custom editors provided by the Spring Framework are:<br/><br/>&#8226; PropertyEditor<br/>&#8226; URLEditor<br/>&#8226; ClassEditor<br/>&#8226; CustomDateEditor<br/>&#8226; FileEditor<br/>&#8226; LocaleEditor<br/>&#8226; StringArrayPropertyEditor<br/>&#8226; StringTrimmerEditor<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          282,
+                          6,
+                          'How is Hibernate accessed using the Spring framework?',
+                          'Hibernate can be accessed in the following two ways:<br/><br/>&#8226; By IOC with a Callback and HibernateTemplate.<br/>&#8226; By applying an AOP Interceptor and broadening the HibernateDaoSupport.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          283,
+                          6,
+                          'What are the various Channels supported by Spring 2.0?',
+                          'Following are the channels supported by spring version 2.0:<br/><br/>&#8226; Pollable Channel<br/>&#8226; Subscribable Channel<br/>&#8226; PublishSubscribe Channel<br/>&#8226; Queue Channel<br/>&#8226; Priority Channel<br/>&#8226; Rendezvous Channel<br/>&#8226; Direct Channel<br/>&#8226; Executor Channel<br/>&#8226; Scoped Channel<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          284,
+                          6,
+                          'What are all the ways to access Hibernate by using Spring?',
+                          'There are two ways to access hibernate using spring:<br/><br/>&#8226; Inversion of Control with a Hibernate Template and Callback<br/>&#8226; Extending HibernateDAOSupport and Applying an AOP Interceptor node.<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          285,
+                          6,
+                          'How struts application can be integrated with spring?',
+                          'There are two options for struts application that can be integrated with spring:<br/><br/>Configuration of Spring to manage beans using ContextLoader plugin and set their dependencies in a spring context file<br/><br/>Grab spring managed beans explicitly using agetwebapplicationcontext()<br/>');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          286,
+                          6,
+                          'What is Inner bean? What is the drawback of inner bean?',
+                          'If a bean element is directly embedded in a property tag while wiring beans, then the bean is called Inner Bean. Its drawback is that it cannot be reprocessed.');
+
+INSERT INTO interview_questions (
+                          iqid,
+                          topic_id,
+                          question,
+                          answer
+                          
+                      )
+                      VALUES (
+                          287,
+                          6,
+                          'What are the different types of Injection in spring?',
+                          'There are three types of Injection in spring:<br/><br/>&#8226; Setter Injection<br/>&#8226; Constructor Injection<br/>&#8226; Getter or Method Injection<br/>');
