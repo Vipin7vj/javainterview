@@ -11,10 +11,10 @@ import com.interview.model.Quiz;
 public interface IQuizService {
 
 	List<Quiz> findByTopicId(Long id);
-	List<Quiz> findByTopicIds(Set<Long> id);
 	List<Quiz> findAll();
 
 	Quiz findById(Long id);
 	
 	Quiz save(Quiz quiz);
+	List<Quiz> findByTopicIds(Set<Long> idSet);
 }

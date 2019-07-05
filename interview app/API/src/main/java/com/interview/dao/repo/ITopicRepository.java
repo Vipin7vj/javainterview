@@ -11,4 +11,6 @@ import com.interview.model.Topic;
 public interface ITopicRepository extends JpaRepository<Topic, Long> {
 
 	List<Topic> findAll();
+	
+	Topic findByName(String name);
 }

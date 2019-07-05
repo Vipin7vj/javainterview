@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="secondary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light">
+        <ion-text color="light" class="fw700">Quiz Started</ion-text>
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let quizQ of quizQues">
+    <ion-radio-group>
+      <ion-list-header>
+        <div [innerHTML]="quizQ['question']"> </div>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <div [innerHTML]="quizQ['optiona']"> </div>
+        </ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <div [innerHTML]="quizQ['optionb']"> </div>
+        </ion-label>
+        <ion-radio value="2"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <div [innerHTML]="quizQ['optionc']"> </div>
+        </ion-label>
+        <ion-radio value="3"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <div [innerHTML]="quizQ['optiond']"> </div>
+        </ion-label>
+        <ion-radio value="4"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+  </ion-list>
+
+
+  <ion-button (click)="endQuiz()" color="primary">End Quiz</ion-button>
+
+</ion-content>

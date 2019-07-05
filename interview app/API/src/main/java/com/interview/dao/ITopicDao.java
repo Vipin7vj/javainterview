@@ -14,4 +14,6 @@ import com.interview.model.User;
 public interface ITopicDao extends IGenericDao<Topic>{ 
 
 	List<Topic> findAll();
+
+	Topic findByName(String name);
 }

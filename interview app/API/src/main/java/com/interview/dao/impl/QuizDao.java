@@ -55,14 +55,19 @@ public class QuizDao extends GenericDaoImpl<Quiz> implements IQuizDao {
 
 	@Override
 	public Quiz findById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.findByQId(id);
 	}
 
 	@Override
 	public List<Quiz> findByIds(Set<Long> id) {
 		// TODO Auto-generated method stub
 		return repo.findByIds(id);
+	}
+
+	@Override
+	public List<Long> findQidByTopic(Long id) {
+		// TODO Auto-generated method stub
+		return repo.findQidByTopic(id);
 	}
 
 }

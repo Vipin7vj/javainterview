@@ -14,9 +14,17 @@ import java.lang.Long;
 public interface IQuizRepository extends JpaRepository<Quiz, Long> {
 
 	List<Quiz> findByTopic_Id(Long topicid);
+	
+	Quiz findByQId(Long id);
 
 	List<Quiz> findAll();
 	
 	@Query("select u from Quiz u where u.topic.id IN :id")
 	List<Quiz> findByIds(Set<Long> id);
+	
+//	@Query("select count(*) from Quiz q where q.topic.id = :id")
+//	Integer countById(Long id);
+	
+	@Query("select qId from Quiz q where q.topic.id = :id")
+	List<Long> findQidByTopic(Long id);
 }

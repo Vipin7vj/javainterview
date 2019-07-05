@@ -38,6 +38,12 @@ private ITopicRepository repo;
 		// TODO Auto-generated method stub
 		return repo.findById(id).orElse(null);
 	}
+	
+	@Override
+	public Topic findByName(String name) {
+		// TODO Auto-generated method stub
+		return repo.findByName(name);
+	}
 
 	@Override
 	public Topic save(Topic entity) {

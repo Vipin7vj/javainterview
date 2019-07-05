@@ -48,10 +48,9 @@ public class QuizController {
 	}
 
 	@GetMapping("/get")
-	public List<Quiz> getByIds(@RequestParam("ids") Set<Long> id) {
-		System.err.println(id);
-		return service.findByTopicIds(id); // sa
-
+	public List<Quiz> getByIds(@RequestParam("ids") Set<Long> idSet) {
+		System.err.println(idSet);
+		return service.findByTopicIds(idSet); 
 	}
 
 }

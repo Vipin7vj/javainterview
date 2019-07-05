@@ -1,9 +1,28 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="secondary"></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Coming soon.....
+      <ion-text color="light">
+        <ion-text color="light" class="fw700">Quiz</ion-text>
+      </ion-text>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-list>
+    <ion-list-header>Multiple Selection</ion-list-header>
+
+    <ion-item>
+      <ion-label>Topics</ion-label>
+      <ion-select multiple="true" cancelText="Nah" okText="Okay!" (ionChange)="onTopicSelection($event)">
+        <ion-select-option value="{{topic.id}}" *ngFor="let topic of topics">{{topic.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="startQuiz()" color="primary">Start Quiz</ion-button>
+
+</ion-content>

@@ -5,6 +5,8 @@ import { QnAComponent } from '../qn-a/qn-a.component';
 import { QnAModule } from '../qn-a/qn-a.module';
 import { AnswerComponent } from '../answer/answer.component';
 import { AnswerModule } from '../answer/answer.module';
+import { QuizComponent } from '../quiz/quiz.component';
+import { QuizModule } from '../quiz/quiz.module';
 
 const routes: Routes = [
   {
@@ -44,7 +46,11 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab3/tab3.module#Tab3PageModule'
-          }
+          },
+          {
+            path: 'startQuiz',
+            component: QuizComponent
+          },
         ]
       },
     ]
@@ -55,7 +61,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     QnAModule,
-    AnswerModule
+    AnswerModule,
+    QuizModule
   ],
   exports: [RouterModule]
 })

@@ -8,6 +8,7 @@ import { LoginModule } from './login/login.module';
 import { QnAModule } from './qn-a/qn-a.module';
 import { SignUpModule } from './sign-up/sign-up.module';
 import { AddQuizModule } from './add-quiz/add-quiz.module';
+import { QuizModule } from './quiz/quiz.module';
 
 const routes: Routes = [
   { path: '', loadChildren: './login/login.module#LoginModule' },
@@ -24,6 +25,7 @@ const routes: Routes = [
     LoginModule,
     AddQuizModule,
     QnAModule,
+    QuizModule,
     AnswerModule,
     RouterModule.forRoot(routes),
     HomeModule,
