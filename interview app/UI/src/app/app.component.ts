@@ -25,7 +25,7 @@ export class AppComponent {
     this.appPages = [
       {
         title: 'Home',
-        url: '/home-results',
+        url: '/tabs/tab1',
         direct: 'root',
         icon: 'home'
       },
