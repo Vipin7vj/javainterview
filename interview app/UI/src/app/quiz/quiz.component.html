@@ -12,44 +12,54 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let quizQ of quizQues">
+  <ion-list *ngFor="let quizQ of quizQues; let i= index;">
     <ion-radio-group>
       <ion-list-header>
-        <div [innerHTML]="quizQ['question']"> </div>
+        <div [innerHTML]="quizQ['question']" style="font-weight: bold; font-style: italic"></div>
       </ion-list-header>
 
       <ion-item>
         <ion-label text-wrap>
           <div [innerHTML]="quizQ['optiona']"> </div>
         </ion-label>
-        <ion-radio value="1"></ion-radio>
+        <ion-radio value="1" (ionSelect)="mcqAnswer(quizQ['qid'],1)"></ion-radio>
       </ion-item>
 
       <ion-item>
         <ion-label text-wrap>
           <div [innerHTML]="quizQ['optionb']"> </div>
         </ion-label>
-        <ion-radio value="2"></ion-radio>
+        <ion-radio value="2" (ionSelect)="mcqAnswer(quizQ['qid'],2)"></ion-radio>
       </ion-item>
 
       <ion-item>
         <ion-label text-wrap>
           <div [innerHTML]="quizQ['optionc']"> </div>
         </ion-label>
-        <ion-radio value="3"></ion-radio>
+        <ion-radio value="3" (ionSelect)="mcqAnswer(quizQ['qid'],3)"></ion-radio>
       </ion-item>
 
       <ion-item>
         <ion-label text-wrap>
           <div [innerHTML]="quizQ['optiond']"> </div>
         </ion-label>
-        <ion-radio value="4"></ion-radio>
+        <ion-radio value="4" (ionSelect)="mcqAnswer(quizQ['qid'],4)"></ion-radio>
       </ion-item>
+      <br>
+      <div *ngIf="showResults" style="margin-left: 5%; font-style: italic; color: blue">
+        Correct Answer is {{quizQ['answer']}}
+      </div>
     </ion-radio-group>
+    <br><br><br>
 
   </ion-list>
 
-
   <ion-button (click)="endQuiz()" color="primary">End Quiz</ion-button>
+  <br><br><br>
+
+  <div *ngIf="showResults">
+    Your score is {{correctAnswers}}/{{quizQues.length}}
+  </div>
+  <br><br><br>
 
 </ion-content>
